@@ -1,0 +1,20 @@
+Package: benchmarkfdrData2019
+Title: Data and Benchmarking Results from Korthauer and Kimes et al. (2019)
+Version: 0.99.0
+Authors@R: c(
+    person("Stephanie", "Hicks", role = c("aut", "cre"), 
+            email = "shicks19@jhu.edu"),
+    person("Keegan", "Korthauer", role = "aut"), 
+    person("Patrick", "Kimes", role = "aut"))
+Description: Preprocessed experimental and simulated scRNA-seq data sets used 
+    for evaluation of benchmarking methods controlling the false 
+    discovery rate Korthauer and Kimes et al. 2019 (Genome Biology). 
+Depends: R (>= 3.6.0), SummarizedExperiment, ExperimentHub
+Imports: utils
+Suggests: knitr, BiocStyle, testthat
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+biocViews: SingleCellData, ExperimentData, RNASeqData, ExpressionData, 
+    ExperimentData, ExperimentHub
+VignetteBuilder: knitr

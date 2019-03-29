@@ -1,0 +1,870 @@
+---
+title: "Simulation Summary Figures"
+author: "Patrick Kimes"
+output: 
+    html_document:
+        toc: true
+        toc_float: true
+        highlight: tango
+        number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-workspace}
+# Load packages and source benchmark FDR
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(magrittr)
+library(cowplot)
+library(tibble)
+library(ggthemes)
+library(grid)
+library(SummarizedBenchmark)
+
+## load helper functions
+for (f in list.files("../R", "\\.(r|R)$", full.names = TRUE)) {
+    source(f)
+}
+
+# set up results directory
+outdir <- "./figures"
+dir.create(outdir, showWarnings = FALSE)
+
+methodset <- c("bonf", "bh", "ihw", "qvalue", "bl-df03", "lfdr",
+               "fdrreg-e", "fdrreg-t", "ashq", "adapt-glm")
+```
+
+# Data Preparation
+
+First, we load summaries for all simulations results at significance thresholds
+between 0.01 and 0.10. This process can take a long time (approximately 40 minutes
+per alpha cutoff) because of the large number of simulation settings that must be
+read in and summarized. Ideally, this initial step should be run externally separate
+from this Rmd (by default, the following code chunk will not be run).
+
+```{r, eval = FALSE}
+for (ia in 1:10) {
+    summary_file <- file.path("results-summary", paste0("summary_alpha", ia, ".rds"))
+    if (!file.exists(summary_file)) {
+        res_files <- list.files("results", "\\.rds$", full.names = TRUE)
+        res <- lapply(res_files, function(x) {
+            zz <- readRDS(x)
+            zz_i <- lapply(zz, `[[`, "informative")
+            zz_u <- lapply(zz, `[[`, "uninformative")
+            zz_i <- plotsim_standardize(zz_i, alpha = ia / 100L)
+            zz_i <- dplyr::select(zz_i, rep, blabel, param.alpha, key, performanceMetric, alpha, value)
+            zz_u <- plotsim_standardize(zz_u, alpha = ia / 100L)
+            zz_u <- dplyr::select(zz_u, rep, blabel, param.alpha, key, performanceMetric, alpha, value)
+            dplyr::full_join(zz_i, zz_u,
+                             by = c("rep", "blabel", "param.alpha", "key", "performanceMetric", "alpha"),
+                             suffix = c(".info", ".uninfo"))
+        })
+        names(res) <- gsub("\\.rds$", "", basename(res_files))
+        saveRDS(res, summary_file)
+    }
+}
+```
+
+Assuming that the summaries have been saved for all simulation settings at
+the various FDR thresholds using the code above, we load the summarized results
+and merge them into a single results table.
+
+```{r}
+alphas <- 1:10
+res <- vector("list", length(alphas))
+for (ia in seq_len(length(alphas))) {
+    imethodset <- methodset
+    imethodset[which(imethodset == "ihw")] <- paste0("ihw-a", sprintf("%02d", alphas[ia]))
+    ires <- readRDS(file.path("results-summary", paste0("summary_alpha", alphas[ia], ".rds")))
+    ires <- bind_rows(ires, .id = "setting")
+    ires <- dplyr::mutate(ires, dist = gsub(".*?-benchmark-(.*)", "\\1", setting),
+                         setting = gsub("(.*?)-benchmark-.*", "\\1", setting))
+    ires <- dplyr::filter(ires, blabel %in% imethodset)
+    ires <- dplyr::mutate(ires, blabel = gsub("(-a)(.*)", "", blabel))
+    res[[ia]] <- ires
+}
+res <- bind_rows(res)
+res <- dplyr::select(res, -param.alpha)
+res <- dplyr::rename(res, Method = blabel)
+res <- dplyr::mutate(res, Method = gsub("-df03", "", Method))
+res <- dplyr::mutate(res, Method = factor(Method, levels = gsub("-df03", "", methodset)))
+```
+
+We compute summary metrics for each method, setting, and cutoff.
+
+```{r}
+resmet <- dplyr::mutate(res, value.info = ifelse(is.na(value.info) & grepl("R$", key), 0, value.info),
+                        value.uninfo = ifelse(is.na(value.uninfo) & grepl("R$", key), 0, value.uninfo))
+resmet <- dplyr::group_by(resmet, setting, dist, Method, key, performanceMetric, alpha)
+resmet <- dplyr::summarize(resmet,
+                           mean.info = mean(value.info, na.rm = TRUE),
+                           se.info = sd(value.info, na.rm = TRUE) / sqrt(sum(!is.na(value.info))),
+                           nNA.info = sum(is.na(value.info)),
+                           mean.diff = mean(value.info - value.uninfo, na.rm = TRUE),
+                           se.diff = sd(value.info - value.uninfo, na.rm = TRUE) /
+                               sqrt(sum(!is.na(value.info - value.uninfo))))
+resmet <- dplyr::ungroup(resmet)
+```
+
+We clean up the annotations in the table for some of the more complex simulation settings.
+
+```{r}
+resmet <- dplyr::mutate(resmet, inform = ifelse(grepl("varyinginfo", setting), dist, NA))
+resmet <- dplyr::mutate(resmet, inform = as.numeric(gsub("level", "", inform)))
+resmet <- dplyr::mutate(resmet, dist = ifelse(grepl("varyinginfo", setting), "gaussian", dist))
+
+resmet <- dplyr::mutate(resmet, pi0 = ifelse(grepl("varyingpi0", setting), dist, 90))
+resmet <- dplyr::mutate(resmet, pi0 = as.numeric(gsub("nullprop", "", pi0)))
+resmet <- dplyr::mutate(resmet, dist = ifelse(grepl("^varyingpi0$", setting), "gaussian", dist))
+resmet <- dplyr::mutate(resmet, dist = ifelse(grepl("^varyingpi0-t$", setting), "t11", dist))
+
+resmet <- dplyr::mutate(resmet, signal = ifelse(grepl("uasettings", setting), dist, NA))
+resmet <- dplyr::mutate(resmet, dist = ifelse(grepl("^uasettings$", setting), "gaussian", dist))
+resmet <- dplyr::mutate(resmet, dist = ifelse(grepl("^uasettings-t$", setting), "t11", dist))
+resmet <- dplyr::mutate(resmet, setting = ifelse(grepl("uasettings", setting), "uasettings", setting))
+
+resmet <- dplyr::mutate(resmet, pi0 = ifelse(grepl("varyingntests", setting), 90, pi0))
+resmet <- dplyr::mutate(resmet, ntests = ifelse(grepl("varyingntests", setting), dist, "n20000"))
+resmet <- dplyr::mutate(resmet, ntests = as.numeric(gsub("n", "", ntests)))
+resmet <- dplyr::mutate(resmet, dist = ifelse(grepl("varyingntests", setting), "gaussian", dist))
+```
+
+We also replace the test statistic distribution labels with more plotting-friendly labels.
+
+```{r}
+resmet <- dplyr::mutate(resmet, dist = factor(dist, levels = c("gaussian", "t11", "t5", "chisq4"),
+                                              labels = c(expression("Distribution: " * N(0, 1)),
+                                                         expression("Distribution: " * t[11]),
+                                                         expression("Distribution: " * t[5]),
+                                                         expression("Distribution: " * {chi^2}[4]))))
+```
+
+We use the standardize candy color scheme and line types for the plots.
+
+```{r}
+col <- as.character(candycols$col)
+names(col) <- as.character(candycols$Method)
+lty <- as.character(candycols$lty)
+names(lty) <- as.character(candycols$Method)
+```
+
+There are several different simulation settings that can be investigated.
+
+```{r}
+dplyr::distinct(resmet, setting)
+```
+
+Namely, simulation settings were run with to investigate the impact of different
+informative covariates, noninformative covariates, varying null proportions,
+varying covariate informativeness, and varying effect size distributions (including
+unimodal effects as described in the ASH manuscript). Many of these simulation
+settings were also run with different sampling noise distributions, including
+Normal/Gaussian, t with 11 degrees of freedom, t with 5 degrees of freedom, and
+Chi-squared with 4 degrees of freedom.
+
+Results are reproted for the Chi-Squared simulation settings without `ashq`,
+`fdrreg-e` and `fdrreg-t`, since the assumptions of these methods are clearly
+violated under these settings, and it is neither appropriate nor fair to include
+them in the comparisons.
+
+```{r}
+resmet <- dplyr::filter(resmet, !( grepl("chi", dist) & Method == "ashq" ))
+resmet <- dplyr::filter(resmet, !( grepl("chi", dist) & grepl("fdrreg", Method) ))
+```
+
+Since the table will be used again for generating manuscript figures, we save it as
+an RDS object for easier future access.
+
+```{r save-resmet}
+resmet_file <- file.path("results-summary", "result-metrics.rds")
+if (!file.exists(resmet_file)) {
+    saveRDS(resmet, file = resmet_file)
+}
+```
+
+# Null Simulations
+
+We subset on simulation results that look at informative and non-informative covariates across
+different noise distributions.
+
+For null simulations, rather than the false discovery rate, we take a look at the true negative
+rate (equivalently, the proportion of false positives) since the FDR will be 1 if any rejections
+are made. Additionally, we take a look at the FWER (the proportion of simulation replicates out
+of 100 with at least one rejection). 
+
+```{r, fig.width = 18, fig.height = 8}
+res_nullset <- dplyr::filter(resmet, setting == "null")
+
+null_tnr <- dplyr::filter(res_nullset, key == "TNR") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.0025, alpha=0.5) +
+    facet_grid(. ~ dist, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TNR", labels = scales::percent) +
+    ggtitle("Mean TNR Over 100 Replications") +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+null_fwer <- dplyr::filter(res_nullset, key == "FWER") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    facet_grid(. ~ dist, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FWER", labels = scales::percent) +
+    ggtitle("FWER Over 100 Replications") +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(null_tnr + guides(color = FALSE, linetype = FALSE),
+                null_fwer + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[1:2], ncol = 1)
+gp <- plot_grid(gp, get_legend(null_tnr), rel_widths = c(1, 1/16))
+gp
+```
+
+We also look at the difference between informative and uninformative covariates.
+
+```{r, fig.width = 18, fig.height = 8}
+null_tnr_diff <- dplyr::filter(res_nullset, key == "TNR") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ dist, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TNR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean TNR Difference Over 100 Replications") +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+null_fwer_diff <- dplyr::filter(res_nullset, key == "FWER") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ dist, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FWER\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("FWER Difference Over 100 Replications") +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(null_tnr_diff + guides(color = FALSE, linetype = FALSE),
+                null_fwer_diff + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[3:4], ncol = 1)
+gp <- plot_grid(gp, get_legend(null_tnr_diff), rel_widths = c(1, 1/16))
+gp
+```
+
+
+# Sampling Distributions
+
+We just take a look at different noise distributions for a single informative covariate.
+We take a look at the false discovery proportion controlled along a grid of nominal alpha cutoffs
+between 0.01 and 0.10 for each method, as well as the true positive rate for each method along
+the set of cutoffs. 
+
+```{r, fig.width = 18, fig.height = 8}
+res_noise <- dplyr::filter(resmet, setting == "informative-cubic")
+
+noise_fdr <- dplyr::filter(res_noise, key == "FDR") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.0025, alpha=0.5) +
+    geom_abline(intercept = 0, slope = 1, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ dist, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FDR", labels = scales::percent) +
+    ggtitle("Mean FDR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+noise_tpr <- dplyr::filter(res_noise, key == "TPR") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.0025, alpha=0.5) +
+    facet_grid(. ~ dist, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TPR", labels = scales::percent) +
+    ggtitle("Mean TPR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(noise_fdr + guides(color = FALSE, linetype = FALSE),
+                noise_tpr + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[1:2], ncol = 1)
+gp <- plot_grid(gp, get_legend(noise_tpr), rel_widths = c(1, 1/16))
+gp
+
+gp <- plot_grid(noise_fdr + guides(color = FALSE, linetype = FALSE) + coord_cartesian(ylim = c(0, .2)),
+                noise_tpr + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[1:2], ncol = 1)
+gp <- plot_grid(gp, get_legend(noise_tpr), rel_widths = c(1, 1/16))
+gp
+```
+
+We also look at the difference between informative and uninformative covariates.
+
+```{r, fig.width = 18, fig.height = 8}
+noise_fdr_diff <- dplyr::filter(res_noise, key == "FDR") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ dist, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FDR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean FDR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+noise_tpr_diff <- dplyr::filter(res_noise, key == "TPR") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ dist, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TPR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean TPR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(noise_fdr_diff + guides(color = FALSE, linetype = FALSE),
+                noise_tpr_diff + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[3:4], ncol = 1)
+gp <- plot_grid(gp, get_legend(noise_tpr_diff), rel_widths = c(1, 1/16))
+gp
+```
+
+
+# Informative Covariates
+
+We also take a look across different informative covariates under just the normal
+sampling noise setting. As before, we take a look at the false discovery proportion
+controlled along a grid of nominal alpha cutoffs between 0.01 and 0.10 for each method,
+as well as the true positive rate for each method along the set of cutoffs. 
+
+```{r, fig.width = 18, fig.height = 8}
+res_icov <- dplyr::filter(resmet, grepl("^informative", setting), grepl("N\\(0, 1\\)", dist))
+
+icov_fdr <- dplyr::filter(res_icov, key == "FDR") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.0025, alpha=0.5) +
+    geom_abline(intercept = 0, slope = 1, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ setting, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FDR", labels = scales::percent) +
+    ggtitle("Mean FDR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+    
+icov_tpr <- dplyr::filter(res_icov, key == "TPR") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.0025, alpha=0.5) +
+    facet_grid(. ~ setting, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TPR", labels = scales::percent) +
+    ggtitle("Mean TPR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(icov_fdr + guides(color = FALSE, linetype = FALSE),
+                icov_tpr + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[1:2], ncol = 1)
+gp <- plot_grid(gp, get_legend(icov_tpr), rel_widths = c(1, 1/12))
+gp
+```
+
+We also look at the difference between informative and uninformative covariates.
+
+```{r, fig.width = 18, fig.height = 8}
+icov_fdr_diff <- dplyr::filter(res_icov, key == "FDR") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ setting, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FDR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean FDR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+    
+icov_tpr_diff <- dplyr::filter(res_icov, key == "TPR") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ setting, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TPR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean TPR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(icov_fdr_diff + guides(color = FALSE, linetype = FALSE),
+                icov_tpr_diff + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[3:4], ncol = 1)
+gp <- plot_grid(gp, get_legend(icov_tpr_diff), rel_widths = c(1, 1/12))
+gp
+```
+
+
+# Null Proportions
+
+We take a look at the impact of the proportion of null hypotheses on the performance
+of the different methods under just the normal sampling noise setting. We plot the
+false discovery proportion and true positive rate at a nominal alpha cutoff of 0.05
+for each method. The sine informative covariate was used in these simulation settings.
+
+```{r, fig.width = 10, fig.height = 4}
+res_pi0 <- dplyr::filter(resmet, setting == "varyingpi0", alpha == 0.05)
+                      
+pi0_fdr <- dplyr::filter(res_pi0, key == "FDR") %>%
+    ggplot(aes(x = pi0, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 2.5, alpha=0.5) +
+    geom_hline(aes(yintercept = alpha), lty = 2, color = "blue", alpha = 1/2) + 
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("pi0", breaks = seq(0, 100, 10)) +
+    scale_y_continuous("FDR", labels = scales::percent) +
+    ggtitle("Mean FDR at alpha = 0.05 Over 100 Replications") +
+    expand_limits(x =0, y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+pi0_tpr <- dplyr::filter(res_pi0, key == "TPR") %>%
+    ggplot(aes(x = pi0, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 2.5, alpha=0.5) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("pi0", breaks = seq(0, 100, 10)) +
+    scale_y_continuous("TPR", labels = scales::percent) +
+    ggtitle("Mean TPR at alpha = 0.05 Over 100 Replications") +
+    expand_limits(x =0, y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(pi0_fdr + guides(color = FALSE, linetype = FALSE),
+                pi0_tpr + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[1:2], ncol = 2)
+gp <- plot_grid(gp, get_legend(pi0_tpr), rel_widths = c(1, 1/8))
+gp
+```
+
+
+# Informativeness
+
+We take a look at the impact of the informativeness of a covariate on the performance
+of the different methods under just the normal sampling noise setting. Here, the informative
+covariate is sampled uniformly between 0 and 1 and the probability of the corresponding test
+being null is more or less dependent on the value of the covariate. The "informativeness" is
+greater when the value of the covariate is more informative of the probability of null being
+high or low. We plot the false discovery proportion and true positive rate at a nominal alpha
+cutoff of 0.05 for each method. 
+
+```{r, fig.width = 10, fig.height = 4}
+res_info <- dplyr::filter(resmet, setting == "varyinginfo-smooth", alpha == 0.05)
+
+info_fdr <- dplyr::filter(res_info, key == "FDR") %>%
+    ggplot(aes(x = inform, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 2.5, alpha=0.5) +
+    geom_hline(aes(yintercept = alpha), lty = 2, color = "blue", alpha = 1/2) + 
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("informativeness", breaks = seq(0, 100, 10)) +
+    scale_y_continuous("FDR", labels = scales::percent) +
+    ggtitle("Mean FDR at alpha = 0.05 Over 100 Replications") +
+    expand_limits(x =0, y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+info_tpr <- dplyr::filter(res_info, key == "TPR") %>%
+    ggplot(aes(x = inform, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 2.5, alpha=0.5) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("informativeness", breaks = seq(0, 100, 10)) +
+    scale_y_continuous("TPR", labels = scales::percent) +
+    ggtitle("Mean TPR at alpha = 0.05 Over 100 Replications") +
+    expand_limits(x =0, y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(info_fdr + guides(color = FALSE, linetype = FALSE),
+                info_tpr + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[1:2], ncol = 2)
+gp <- plot_grid(gp, get_legend(info_tpr), rel_widths = c(1, 1/8))
+gp
+```
+
+We also look at the difference between informative and uninformative covariates.
+
+```{r, fig.width = 10, fig.height = 4}
+info_fdr_diff <- dplyr::filter(res_info, key == "FDR") %>%
+    ggplot(aes(x = inform, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 2.5, alpha=0.5) +
+    geom_hline(aes(yintercept = 0), lty = 2, color = "blue", alpha = 1/2) + 
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("informativeness", breaks = seq(0, 100, 10)) +
+    scale_y_continuous("FDR", labels = scales::percent) +
+    ggtitle("Mean FDR Difference at alpha = 0.05 Over 100 Replications") +
+    expand_limits(x =0, y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+info_tpr_diff <- dplyr::filter(res_info, key == "TPR") %>%
+    ggplot(aes(x = inform, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 2.5, alpha=0.5) +
+    geom_hline(aes(yintercept = 0), lty = 2, color = "blue", alpha = 1/2) + 
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("informativeness", breaks = seq(0, 100, 10)) +
+    scale_y_continuous("TPR", labels = scales::percent) +
+    ggtitle("Mean TPR Difference at alpha = 0.05 Over 100 Replications") +
+    expand_limits(x =0, y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(info_fdr_diff + guides(color = FALSE, linetype = FALSE),
+                info_tpr_diff + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[3:4], ncol = 2)
+gp <- plot_grid(gp, get_legend(info_tpr_diff), rel_widths = c(1, 1/8))
+gp
+```
+
+
+# Unimodal Assumption
+
+We also take a look at the results for simulation settings where the effect sizes follow a unimodal
+distribution (null and alternative, combined) as proposed in the ASH paper. We implement some of the
+unimodal effect size distributions described in the paper, "flattop", "skew", and "spiky", as well
+as a single bimodal setting also described in the paper, "bimodal". As before, we plot the the
+false discovery proportion and true positive rate for each method along a grid of nominal FDR cutoffs
+between 0.01 and 0.10. The cubic informative covariate was used in these simulation settings.
+
+## Normal Noise
+
+First, we look at the unimodal setting under Normal sampling noise.
+
+```{r, fig.width = 18, fig.height = 8}
+res_ua <- dplyr::filter(resmet, setting == "uasettings", grepl("N\\(0, 1\\)", dist))
+
+noise_fdr <- dplyr::filter(res_ua, key == "FDR") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.0025, alpha=0.5) +
+    geom_abline(intercept = 0, slope = 1, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ signal, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FDR", labels = scales::percent) +
+    ggtitle("Mean FDR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+noise_tpr <- dplyr::filter(res_ua, key == "TPR") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.0025, alpha=0.5) +
+    facet_grid(. ~ signal, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TPR", labels = scales::percent) +
+    ggtitle("Mean TPR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(noise_fdr + guides(color = FALSE, linetype = FALSE),
+                noise_tpr + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[1:2], ncol = 1)
+gp <- plot_grid(gp, get_legend(noise_tpr), rel_widths = c(1, 1/16))
+gp
+```
+
+We also look at the difference between informative and uninformative covariates.
+
+```{r, fig.width = 18, fig.height = 8}
+noise_fdr_diff <- dplyr::filter(res_ua, key == "FDR") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ signal, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FDR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean FDR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+noise_tpr_diff <- dplyr::filter(res_ua, key == "TPR") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ signal, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TPR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean TPR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(noise_fdr_diff + guides(color = FALSE, linetype = FALSE),
+                noise_tpr_diff + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[3:4], ncol = 1)
+gp <- plot_grid(gp, get_legend(noise_tpr_diff), rel_widths = c(1, 1/16))
+gp
+```
+
+## t Noise
+
+Next, we look at the unimodal settings under t (11 degrees of freedom) distributed
+sampling noise.
+
+```{r, fig.width = 18, fig.height = 8}
+res_ua <- dplyr::filter(resmet, setting == "uasettings", grepl("t\\[11\\]", dist))
+
+noise_fdr <- dplyr::filter(res_ua, key == "FDR") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.0025, alpha=0.5) +
+    geom_abline(intercept = 0, slope = 1, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ signal, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FDR", labels = scales::percent) +
+    ggtitle("Mean FDR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+noise_tpr <- dplyr::filter(res_ua, key == "TPR") %>%
+    ggplot(aes(x = alpha, y = mean.info, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.0025, alpha=0.5) +
+    facet_grid(. ~ signal, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TPR", labels = scales::percent) +
+    ggtitle("Mean TPR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(noise_fdr + guides(color = FALSE, linetype = FALSE),
+                noise_tpr + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[1:2], ncol = 1)
+gp <- plot_grid(gp, get_legend(noise_tpr), rel_widths = c(1, 1/16))
+gp
+```
+
+We also look at the difference between informative and uninformative covariates.
+
+```{r, fig.width = 18, fig.height = 8}
+noise_fdr_diff <- dplyr::filter(res_ua, key == "FDR") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ signal, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("FDR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean FDR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+noise_tpr_diff <- dplyr::filter(res_ua, key == "TPR") %>%
+    ggplot(aes(x = alpha, y = mean.diff, color = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.0025, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    facet_grid(. ~ signal, scales = "free_x", labeller = label_parsed) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    scale_x_continuous("alpha", breaks = seq(0, 1, .01)) +
+    scale_y_continuous("TPR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean TPR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(noise_fdr_diff + guides(color = FALSE, linetype = FALSE),
+                noise_tpr_diff + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[3:4], ncol = 1)
+gp <- plot_grid(gp, get_legend(noise_tpr_diff), rel_widths = c(1, 1/16))
+gp
+```
+
+
+# Varying Test Count
+
+We take a look at a sequence of simulation settings where only the total number of hypthesis tests
+is varied. We take a look at the false discovery proportion and true positive rate for each method
+at a nomial alpha cutoff of 0.05 as the number of tests is changed.
+
+```{r, fig.width = 10, fig.height = 4}
+res_ntests <- dplyr::filter(resmet, setting == "varyingntests", alpha == 0.05)
+
+ntests_fdr <- dplyr::filter(res_ntests, key == "FDR") %>%
+    ggplot(aes(x = as.factor(ntests), y = mean.info, color = Method, group = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.1, alpha=0.5) +
+    geom_hline(yintercept = 0.05, lty = 2, color = "blue", alpha = 1/2) + 
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    xlab("Number of Tests") +
+    scale_y_continuous("FDR", labels = scales::percent) +
+    ggtitle("Mean FDR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+ntests_tpr <- dplyr::filter(res_ntests, key == "TPR") %>%
+    ggplot(aes(x = as.factor(ntests), y = mean.info, color = Method, group = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.info - se.info, ymax = mean.info + se.info), width = 0.1, alpha=0.5) +
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    xlab("Number of Tests") + 
+    scale_y_continuous("TPR", labels = scales::percent) +
+    ggtitle("Mean TPR Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(ntests_fdr + guides(color = FALSE, linetype = FALSE),
+                ntests_tpr + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[1:2], ncol = 2)
+gp <- plot_grid(gp, get_legend(ntests_tpr), rel_widths = c(1, 1/8))
+gp
+```
+
+We also look at the difference between informative and uninformative covariates.
+
+```{r, fig.width = 10, fig.height = 4}
+ntests_fdr_diff <- dplyr::filter(res_ntests, key == "FDR") %>%
+    ggplot(aes(x = as.factor(ntests), y = mean.diff, color = Method, group = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.1, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    xlab("Number of Tests") + 
+    scale_y_continuous("FDR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean FDR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+ntests_tpr_diff <- dplyr::filter(res_ntests, key == "TPR") %>%
+    ggplot(aes(x = as.factor(ntests), y = mean.diff, color = Method, group = Method)) +
+    geom_line(aes(linetype = Method), alpha = 0.85) +
+    geom_errorbar(aes(ymin = mean.diff - se.diff, ymax = mean.diff + se.diff), width = 0.1, alpha=0.5) +
+    geom_hline(yintercept = 0, lty = 2, color = "blue", alpha = 1/2) + 
+    scale_linetype_manual(values = lty) + 
+    scale_color_manual(values = col) +
+    xlab("Number of Tests") + 
+    scale_y_continuous("TPR\n(informative - uninformative)", labels = scales::percent) +
+    ggtitle("Mean TPR Difference Over 100 Replications") +
+    expand_limits(y = 0) +
+    theme_classic() +
+    theme(axis.title = element_text(face = "bold", size = 10),
+          plot.title = element_text(face = "bold", size = 14))
+
+gp <- plot_grid(ntests_fdr_diff + guides(color = FALSE, linetype = FALSE),
+                ntests_tpr_diff + guides(color = FALSE, linetype = FALSE),
+                labels = LETTERS[3:4], ncol = 2)
+gp <- plot_grid(gp, get_legend(ntests_tpr_diff), rel_widths = c(1, 1/8))
+gp
+```
