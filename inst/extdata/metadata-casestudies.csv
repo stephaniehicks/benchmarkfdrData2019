@@ -1,0 +1,2 @@
+"Title","Description","Series","M","TestStatistic","EffectSize","NullProportion","InformativeCovariate","RDataClass","DispatchClass"
+"null-benchmark-gaussian","100 replicates of null simulations with standard Gaussian distributed test statistics used in Korthauer, Kimes et al. (2019).","Null",20000,"Gaussian","none",1,"none","SummarizedBenchmark","Rds"
