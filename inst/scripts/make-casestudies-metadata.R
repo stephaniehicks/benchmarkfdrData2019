@@ -2473,16 +2473,6 @@ df_all_casestudies <- base::rbind(
 ## ##############################################################################
 ## ##############################################################################
 
-## all results in table are simulations, leave certain required metadata empty
-##df_all_casestudies$Genome <- ""
-##df_all_casestudies$SourceType <- ""
-##df_all_casestudies$SourceUrl <- ""
-##df_all_casestudies$SourceVersion <- ""
-##df_all_casestudies$Species <- ""
-##df_all_casestudies$TaxonomyId <- ""
-##df_all_casestudies$Coordinate_1_based <- TRUE
-##df_all_casestudies$DataProvider <- ""
-
 ## all results saved as RDS in simulations subfolder w/ Title matching file name
 df_all_casestudies$RDataPath <-
     paste0("benchmarkfdrData2019/", df_all_casestudies$Series, "/", df_all_casestudies$Title, ".rds")
