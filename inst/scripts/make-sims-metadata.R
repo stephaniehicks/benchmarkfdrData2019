@@ -1,6 +1,4 @@
-
-
-## ##############################################################################
+o## ##############################################################################
 ## Simulation
 ## ##############################################################################
 
@@ -1397,13 +1395,13 @@ df_all_sim <- base::rbind(
 ## ##############################################################################
 
 ## all results in table are simulations, leave certain required metadata empty
-df_all_sim$Genome <- ""
-df_all_sim$SourceType <- ""
-df_all_sim$SourceUrl <- ""
-df_all_sim$SourceVersion <- ""
-df_all_sim$Species <- ""
-df_all_sim$TaxonomyId <- ""
-df_all_sim$Coordinate_1_based <- TRUE
+df_all_sim$Genome <- NA_character_
+df_all_sim$SourceType <- "Simulated"
+df_all_sim$SourceUrl <- "https://github.com/pkimes/benchmark-fdr/"
+df_all_sim$SourceVersion <- "b64f15f2bd5bfe70d2ee49921a001929fdd6fcf1"
+df_all_sim$Species <- NA_character_
+df_all_sim$TaxonomyId <- NA_character_
+df_all_sim$Coordinate_1_based <- NA
 df_all_sim$DataProvider <- ""
 
 ## all results saved as RDS in simulations subfolder w/ Title matching file name
