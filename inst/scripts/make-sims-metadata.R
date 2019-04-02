@@ -16,6 +16,8 @@ df_sim_null_gaussian <- data.frame(
   InformativeCovariate = "none",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -31,6 +33,8 @@ df_sim_null_t11 <- data.frame(
   InformativeCovariate = "none",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -46,6 +50,8 @@ df_sim_null_t5 <- data.frame(
   InformativeCovariate = "none",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -61,6 +67,8 @@ df_sim_null_chisq4 <- data.frame(
   InformativeCovariate = "none",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -79,6 +87,8 @@ df_sim_informative_cubic_gaussian <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -94,6 +104,8 @@ df_sim_informative_cubic_t11 <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -109,6 +121,8 @@ df_sim_informative_cubic_t5 <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -124,6 +138,8 @@ df_sim_informative_cubic_chisq4 <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -142,6 +158,8 @@ df_sim_informative_step_gaussian <- data.frame(
   InformativeCovariate = "Step",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -157,6 +175,8 @@ df_sim_informative_step_t11 <- data.frame(
   InformativeCovariate = "Step",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -172,6 +192,8 @@ df_sim_informative_step_t5 <- data.frame(
   InformativeCovariate = "Step",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -187,6 +209,8 @@ df_sim_informative_step_chisq4 <- data.frame(
   InformativeCovariate = "Step",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -205,6 +229,8 @@ df_sim_informative_sine_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -220,6 +246,8 @@ df_sim_informative_sine_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -235,6 +263,8 @@ df_sim_informative_sine_t5 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -250,6 +280,8 @@ df_sim_informative_sine_chisq4 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -268,6 +300,8 @@ df_sim_informative_cosine_gaussian <- data.frame(
   InformativeCovariate = "Cosine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -283,6 +317,8 @@ df_sim_informative_cosine_t11 <- data.frame(
   InformativeCovariate = "Cosine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -298,6 +334,8 @@ df_sim_informative_cosine_t5 <- data.frame(
   InformativeCovariate = "Cosine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -313,6 +351,8 @@ df_sim_informative_cosine_chisq4 <- data.frame(
   InformativeCovariate = "Cosine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -331,6 +371,8 @@ df_sim_uasettings_bimodal_gaussian <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -346,6 +388,8 @@ df_sim_uasettings_spiky_gaussian <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -361,6 +405,8 @@ df_sim_uasettings_flattop_gaussian <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -376,6 +422,8 @@ df_sim_uasettings_skew_gaussian <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -394,6 +442,8 @@ df_sim_uasettings_bimodal_t11 <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -409,6 +459,8 @@ df_sim_uasettings_spiky_t11 <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -424,6 +476,8 @@ df_sim_uasettings_flattop_t11 <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -439,6 +493,8 @@ df_sim_uasettings_skew_t11 <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -457,6 +513,8 @@ df_sim_uasettings_bimodal_25_gaussian <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -472,6 +530,8 @@ df_sim_uasettings_spiky_25_gaussian <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -487,6 +547,8 @@ df_sim_uasettings_flattop_25_gaussian <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -502,6 +564,8 @@ df_sim_uasettings_skew_25_gaussian <- data.frame(
   InformativeCovariate = "Cubic",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -520,6 +584,8 @@ df_sim_varyingntests_n100 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -535,6 +601,8 @@ df_sim_varyingntests_n500 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -550,6 +618,8 @@ df_sim_varyingntests_n1000 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -565,6 +635,8 @@ df_sim_varyingntests_n5000 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -580,6 +652,8 @@ df_sim_varyingntests_n10000 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -595,6 +669,8 @@ df_sim_varyingntests_n50000 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -613,6 +689,8 @@ df_sim_varyingpi0_05_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -628,6 +706,8 @@ df_sim_varyingpi0_10_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -643,6 +723,8 @@ df_sim_varyingpi0_20_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -658,6 +740,8 @@ df_sim_varyingpi0_30_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -673,6 +757,8 @@ df_sim_varyingpi0_40_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -688,6 +774,8 @@ df_sim_varyingpi0_50_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -703,6 +791,8 @@ df_sim_varyingpi0_60_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -718,6 +808,8 @@ df_sim_varyingpi0_70_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -733,6 +825,8 @@ df_sim_varyingpi0_80_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -748,6 +842,8 @@ df_sim_varyingpi0_90_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -763,6 +859,8 @@ df_sim_varyingpi0_95_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -778,6 +876,8 @@ df_sim_varyingpi0_99_gaussian <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -796,6 +896,8 @@ df_sim_varyingpi0_05_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -811,6 +913,8 @@ df_sim_varyingpi0_10_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -826,6 +930,8 @@ df_sim_varyingpi0_20_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -841,6 +947,8 @@ df_sim_varyingpi0_30_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -856,6 +964,8 @@ df_sim_varyingpi0_40_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -871,6 +981,8 @@ df_sim_varyingpi0_50_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -886,6 +998,8 @@ df_sim_varyingpi0_60_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -901,6 +1015,8 @@ df_sim_varyingpi0_70_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -916,6 +1032,8 @@ df_sim_varyingpi0_80_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -931,6 +1049,8 @@ df_sim_varyingpi0_90_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -946,6 +1066,8 @@ df_sim_varyingpi0_95_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -961,6 +1083,8 @@ df_sim_varyingpi0_99_t11 <- data.frame(
   InformativeCovariate = "Sine",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -979,6 +1103,8 @@ df_sim_varyinginfo_00_smooth <- data.frame(
   InformativeCovariate = "SmoothInformative00",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -994,6 +1120,8 @@ df_sim_varyinginfo_20_smooth <- data.frame(
   InformativeCovariate = "SmoothInformative20",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1009,6 +1137,8 @@ df_sim_varyinginfo_40_smooth <- data.frame(
   InformativeCovariate = "SmoothInformative40",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1024,6 +1154,8 @@ df_sim_varyinginfo_60_smooth <- data.frame(
   InformativeCovariate = "SmoothInformative60",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1039,6 +1171,8 @@ df_sim_varyinginfo_80_smooth <- data.frame(
   InformativeCovariate = "SmoothInformative80",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1054,6 +1188,8 @@ df_sim_varyinginfo_100_smooth <- data.frame(
   InformativeCovariate = "SmoothInformative100",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1072,6 +1208,8 @@ df_sim_varyinginfo_00_discrete <- data.frame(
   InformativeCovariate = "DiscreteInformative00",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1087,6 +1225,8 @@ df_sim_varyinginfo_20_discrete <- data.frame(
   InformativeCovariate = "DiscreteInformative20",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1102,6 +1242,8 @@ df_sim_varyinginfo_40_discrete <- data.frame(
   InformativeCovariate = "DiscreteInformative40",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1117,6 +1259,8 @@ df_sim_varyinginfo_60_discrete <- data.frame(
   InformativeCovariate = "DiscreteInformative60",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1132,6 +1276,8 @@ df_sim_varyinginfo_80_discrete <- data.frame(
   InformativeCovariate = "DiscreteInformative80",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1147,6 +1293,8 @@ df_sim_varyinginfo_100_discrete <- data.frame(
   InformativeCovariate = "DiscreteInformative100",
   RDataClass = "SummarizedBenchmark",
   DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Patrick Kimes <patrick.kimes@gmail.com>",
   stringsAsFactors = FALSE
 )
 
@@ -1244,6 +1392,28 @@ df_all_sim <- base::rbind(
   df_sim_varyingpi0_99_gaussian
 )
 
-write.csv(file="inst/extdata/metadata-sims.csv",
-          df_all_sims, row.names=FALSE)
+
+## ##############################################################################
+## ##############################################################################
+
+## all results in table are simulations, leave certain required metadata empty
+df_all_sim$Genome <- ""
+df_all_sim$SourceType <- ""
+df_all_sim$SourceUrl <- ""
+df_all_sim$SourceVersion <- ""
+df_all_sim$Species <- ""
+df_all_sim$TaxonomyId <- ""
+df_all_sim$Coordinate_1_based <- TRUE
+df_all_sim$DataProvider <- ""
+
+## all results saved as RDS in simulations subfolder w/ Title matching file name
+df_all_sim$RDataPath <-
+    paste0("benchmarkfdrData2019/simulations/", df_all_sim$Title, ".rds")
+
+
+## ##############################################################################
+## ##############################################################################
+
+write.csv(file = "inst/extdata/metadata-sims.csv",
+          df_all_sim, row.names = FALSE)
 
