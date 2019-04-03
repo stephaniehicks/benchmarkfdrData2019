@@ -178,7 +178,7 @@ df_cbp_csaw_uninf <- data.frame(
 
 df_cbp_csaw_cov <- data.frame(
   Title = "cbp-csaw-cov-benchmark",
-  Description = "Differential peak calling in CREB-binding protein (CBP) knockout and wild-type mice using csaw with mea coverage as covariate",
+  Description = "Differential peak calling in CREB-binding protein (CBP) knockout and wild-type mice using csaw with mean coverage as covariate",
   Series = "ChIP-seq",
   M = 59596,
   Genome = "mm10",
