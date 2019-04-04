@@ -1977,7 +1977,7 @@ df_yeastW_de10 <- data.frame(
 
 df_scrnaseq_human_mast_det <- data.frame(
   Title = "human-benchmark-mast-det",
-  Description = "Case study: differential expression using the method MAST of single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
+  Description = "Case study: differential expression using the method MAST on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCh38",
@@ -2001,7 +2001,7 @@ df_scrnaseq_human_mast_det <- data.frame(
 
 df_scrnaseq_human_mast_mean <- data.frame(
   Title = "human-benchmark-mast-mean",
-  Description = "Case study: differential expression using the method MAST of single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
+  Description = "Case study: differential expression using the method MAST on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCh38",
@@ -2025,7 +2025,7 @@ df_scrnaseq_human_mast_mean <- data.frame(
 
 df_scrnaseq_human_mast_uninf <- data.frame(
   Title = "human-benchmark-mast-uninf",
-  Description = "Case study: differential expression using the method MAST of single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
+  Description = "Case study: differential expression using the method MAST on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCh38",
@@ -2049,7 +2049,7 @@ df_scrnaseq_human_mast_uninf <- data.frame(
 
 df_scrnaseq_human_scdd_det <- data.frame(
   Title = "human-benchmark-scdd-det",
-  Description = "Case study: differential expression using the method scDD of single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
+  Description = "Case study: differential expression using the method scDD on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCh38",
@@ -2073,7 +2073,7 @@ df_scrnaseq_human_scdd_det <- data.frame(
 
 df_scrnaseq_human_scdd_mean <- data.frame(
   Title = "human-benchmark-scdd-mean",
-  Description = "Case study: differential expression using the method scDD of single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
+  Description = "Case study: differential expression using the method scDD on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCh38",
@@ -2097,7 +2097,7 @@ df_scrnaseq_human_scdd_mean <- data.frame(
 
 df_scrnaseq_human_scdd_uninf <- data.frame(
   Title = "human-benchmark-scdd-uninf",
-  Description = "Case study: differential expression using the method scDD of single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
+  Description = "Case study: differential expression using the method scDD on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCh38",
@@ -2121,7 +2121,7 @@ df_scrnaseq_human_scdd_uninf <- data.frame(
 
 df_scrnaseq_human_wilcox_det <- data.frame(
   Title = "human-benchmark-wilcox-det",
-  Description = "Case study: differential expression using a Wilcox test of single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
+  Description = "Case study: differential expression using a Wilcox test on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCh38",
@@ -2145,7 +2145,7 @@ df_scrnaseq_human_wilcox_det <- data.frame(
 
 df_scrnaseq_human_wilcox_mean <- data.frame(
   Title = "human-benchmark-wilcox-mean",
-  Description = "Case study: differential expression using a Wilcox test of single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
+  Description = "Case study: differential expression using a Wilcox test on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCh38",
@@ -2170,7 +2170,7 @@ df_scrnaseq_human_wilcox_mean <- data.frame(
 
 df_scrnaseq_human_wilcox_uninf <- data.frame(
   Title = "human-benchmark-wilcox-uninf",
-  Description = "Case study: differential expression using a Wilcox test of single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
+  Description = "Case study: differential expression using a Wilcox test on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCh38",
@@ -2194,7 +2194,7 @@ df_scrnaseq_human_wilcox_uninf <- data.frame(
 
 df_scrnaseq_mouse_mast_det <- data.frame(
   Title = "mouse-benchmark-mast-det",
-  Description = "Case study: differential expression using the method MAST of single mouse cells upon NF-kappa-beta activation.",
+  Description = "Case study: differential expression using the method MAST on single mouse cells upon NF-kappa-beta activation.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCm38",
@@ -2218,7 +2218,7 @@ df_scrnaseq_mouse_mast_det <- data.frame(
 
 df_scrnaseq_mouse_mast_mean <- data.frame(
   Title = "mouse-benchmark-mast-mean",
-  Description = "Case study: differential expression using the method MAST of single mouse cells upon NF-kappa-beta activation.",
+  Description = "Case study: differential expression using the method MAST on single mouse cells upon NF-kappa-beta activation.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCm38",
@@ -2242,7 +2242,7 @@ df_scrnaseq_mouse_mast_mean <- data.frame(
 
 df_scrnaseq_mouse_mast_uninf <- data.frame(
   Title = "mouse-benchmark-mast-uninf",
-  Description = "Case study: differential expression using the method MAST of single mouse cells upon NF-kappa-beta activation.",
+  Description = "Case study: differential expression using the method MAST on single mouse cells upon NF-kappa-beta activation.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCm38",
@@ -2266,7 +2266,7 @@ df_scrnaseq_mouse_mast_uninf <- data.frame(
 
 df_scrnaseq_mouse_scdd_det <- data.frame(
   Title = "mouse-benchmark-scdd-det",
-  Description = "Case study: differential expression using the method scDD of single mouse cells upon NF-kappa-beta activation.",
+  Description = "Case study: differential expression using the method scDD on single mouse cells upon NF-kappa-beta activation.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCm38",
@@ -2290,7 +2290,7 @@ df_scrnaseq_mouse_scdd_det <- data.frame(
 
 df_scrnaseq_mouse_scdd_mean <- data.frame(
   Title = "mouse-benchmark-scdd-mean",
-  Description = "Case study: differential expression using the method scDD of single mouse cells upon NF-kappa-beta activation.",
+  Description = "Case study: differential expression using the method scDD on single mouse cells upon NF-kappa-beta activation.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCm38",
@@ -2314,7 +2314,7 @@ df_scrnaseq_mouse_scdd_mean <- data.frame(
 
 df_scrnaseq_mouse_scdd_uninf <- data.frame(
   Title = "mouse-benchmark-scdd-uninf",
-  Description = "Case study: differential expression using the method scDD of single mouse cells upon NF-kappa-beta activation.",
+  Description = "Case study: differential expression using the method scDD on single mouse cells upon NF-kappa-beta activation.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCm38",
@@ -2338,7 +2338,7 @@ df_scrnaseq_mouse_scdd_uninf <- data.frame(
 
 df_scrnaseq_mouse_wilcox_det <- data.frame(
   Title = "mouse-benchmark-wilcox-det",
-  Description = "Case study: differential expression using a wilcox test of single mouse cells upon NF-kappa-beta activation.",
+  Description = "Case study: differential expression using a Wilcox test on single mouse cells upon NF-kappa-beta activation.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCm38",
@@ -2362,7 +2362,7 @@ df_scrnaseq_mouse_wilcox_det <- data.frame(
 
 df_scrnaseq_mouse_wilcox_mean <- data.frame(
   Title = "mouse-benchmark-wilcox-mean",
-  Description = "Case study: differential expression using a wilcox test of single mouse cells upon NF-kappa-beta activation.",
+  Description = "Case study: differential expression using a Wilcox test on single mouse cells upon NF-kappa-beta activation.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCm38",
@@ -2386,7 +2386,7 @@ df_scrnaseq_mouse_wilcox_mean <- data.frame(
 
 df_scrnaseq_mouse_wilcox_uninf <- data.frame(
   Title = "mouse-benchmark-wilcox-uninf",
-  Description = "Case study: differential expression using a wilcox test of single mouse cells upon NF-kappa-beta activation.",
+  Description = "Case study: differential expression using a Wilcox test on single mouse cells upon NF-kappa-beta activation.",
   Series = "scRNA-seq",
   M = 0,
   Genome = "GRCm38",
