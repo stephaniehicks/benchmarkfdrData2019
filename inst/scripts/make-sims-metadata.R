@@ -1412,6 +1412,6 @@ df_all_sim$RDataPath <-
 ## ##############################################################################
 ## ##############################################################################
 
-write.csv(file = "inst/extdata/metadata-sims.csv",
+write.csv(file = "../extdata/metadata-sims.csv",
           df_all_sim, row.names = FALSE)
 
