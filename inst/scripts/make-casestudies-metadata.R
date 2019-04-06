@@ -2125,7 +2125,7 @@ df_scrnaseq_human_scdd_uninf <- data.frame(
 df_scrnaseq_human_wilcox_det <- data.frame(
   Title = "human-benchmark-wilcox-det",
   Description = "Case study: differential expression using a Wilcox test on single-cell RNAseq data of diffuse neoplastic infiltrating cells at the migrating front of human glioblastoma.",
-  Seris = "scRNA-seq",
+  Series = "scRNA-seq",
   M = 23257,
   Genome = "GRCh38",
   SourceType = "rds",
@@ -2169,7 +2169,6 @@ df_scrnaseq_human_wilcox_mean <- data.frame(
   Maintainer = "Keegan Korthauer <kdkorthauer@gmail.com>",
   stringsAsFactors = FALSE
 )
-
 
 df_scrnaseq_human_wilcox_uninf <- data.frame(
   Title = "human-benchmark-wilcox-uninf",
