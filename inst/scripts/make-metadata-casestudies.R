@@ -2509,7 +2509,8 @@ df_all_casestudies <- base::rbind(
 
 ## all results saved as RDS in simulations subfolder w/ Title matching file name
 df_all_casestudies$RDataPath <-
-    paste0("benchmarkfdrData2019/", df_all_casestudies$Series, "/", df_all_casestudies$Title, ".rds")
+    paste0("benchmarkfdrData2019/v1.0.0/", df_all_casestudies$Series,
+           "/", df_all_casestudies$Title, ".rds")
 
 
 ## ##############################################################################
