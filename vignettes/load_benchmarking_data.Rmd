@@ -1,0 +1,58 @@
+---
+title: "Apply methods controlling FDR to six computational biology case studies"
+author: 
+- name: Keegan Korthauer
+  affiliation: Dana-Farber Cancer Institute
+- name: Patrick Kimes
+  affiliation: Dana-Farber Cancer Institute
+- name: Stephanie Hicks
+  affiliation: Johns Hopkins University
+output:
+  BiocStyle::html_document:
+    toc_float: true
+package: benchmarkfdrData2019
+abstract: |
+  Instructions on how to re-create results from Korthauer and Kimes et al. (2019) paper on benchmarking methods that control the false discovery rate (FDR).
+vignette: |
+  %\VignetteIndexEntry{Apply methods controlling FDR to real case studies and simulated data}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r, echo=FALSE, results="hide", message=FALSE}
+require(knitr)
+opts_chunk$set(error=FALSE, message=FALSE, warning=FALSE)
+```
+
+```{r style, echo=FALSE, results='asis'}
+BiocStyle::markdown()
+```
+
+# Introduction
+
+This package provides a _R_ / _Bioconductor_ resource to describe
+how to re-create one of the results from the 
+[Korthauer and Kimes et al. (2019)](https://www.biorxiv.org/content/10.1101/458786v1)
+which compare methods controlling the False Discovery Rate (FDR). 
+In this paper, the methods were applied to the collection of 
+data sets in order to generate the benchmarking result summaries
+provided with the package. Here, we give an example of how to 
+re-create the one of the results. 
+
+## Load data 
+
+We use the `benchmarkfdrData2019` function to download the relevant files
+from _Bioconductor_'s ExperimentHub web resource. This includes the
+`SummarizedBenchmark` files from the `r Biocpkg("SummarizedBenchmark")` 
+package.
+
+```{r}
+library(SummarizedBenchmark)
+sb <- h3k4me3-promoters-results()
+sb 
+```
+
+# Session information
+
+```{r}
+sessionInfo()
+```
