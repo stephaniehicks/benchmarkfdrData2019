@@ -1402,7 +1402,7 @@ df_all_sim$SourceVersion <- "b64f15f2bd5bfe70d2ee49921a001929fdd6fcf1"
 df_all_sim$Species <- NA_character_
 df_all_sim$TaxonomyId <- NA_character_
 df_all_sim$Coordinate_1_based <- NA
-df_all_sim$DataProvider <- ""
+df_all_sim$DataProvider <- NA_character_
 
 ## all results saved as RDS in simulations subfolder w/ Title matching file name
 df_all_sim$RDataPath <-
@@ -1412,6 +1412,6 @@ df_all_sim$RDataPath <-
 ## ##############################################################################
 ## ##############################################################################
 
-write.csv(file = "../extdata/metadata-sims.csv",
+write.csv(file = "inst/extdata/metadata-sims.csv",
           df_all_sim, row.names = FALSE)
 
