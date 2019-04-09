@@ -6,12 +6,12 @@ Authors@R: c(
             email = "shicks19@jhu.edu"),
     person("Keegan", "Korthauer", role = "aut"), 
     person("Patrick", "Kimes", role = "aut"))
-Description: Preprocessed experimental and simulated scRNA-seq data sets used 
+Description: Preprocessed experimental and simulated data sets used 
     for evaluation of benchmarking methods controlling the false 
-    discovery rate Korthauer and Kimes et al. 2019 (Genome Biology). 
+    discovery rate in Korthauer and Kimes et al. 2019 (Genome Biology). 
 Depends: R (>= 3.6.0), SummarizedExperiment, ExperimentHub
 Imports: utils
-Suggests: knitr, BiocStyle, testthat
+Suggests: knitr, BiocStyle, testthat, SummarizedBenchmark, dplyr, ggplot2
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
