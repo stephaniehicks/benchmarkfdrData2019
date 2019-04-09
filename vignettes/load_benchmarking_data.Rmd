@@ -1,9 +1,9 @@
 ---
-title: "Apply methods controlling FDR "
+title: "Exploring and updating FDR benchmarking results"
 author: 
-- name: Keegan Korthauer
-  affiliation: Dana-Farber Cancer Institute
 - name: Patrick Kimes
+  affiliation: Dana-Farber Cancer Institute
+- name: Keegan Korthauer
   affiliation: Dana-Farber Cancer Institute
 - name: Stephanie Hicks
   affiliation: Johns Hopkins University
@@ -12,9 +12,9 @@ output:
     toc_float: true
 package: benchmarkfdrData2019
 abstract: |
-  Instructions on how to re-create results from Korthauer and Kimes et al. (2019) paper on benchmarking methods that control the false discovery rate (FDR).
+  Instructions on how to re-create results from Korthauer and Kimes et al. (2019) on benchmarking methods that control the false discovery rate (FDR).
 vignette: |
-  %\VignetteIndexEntry{Apply methods controlling FDR to real case studies and simulated data}
+  %\VignetteIndexEntry{Exploring and updating FDR benchmarking results}
   %\VignetteEngine{knitr::rmarkdown}
 ---
 
@@ -47,6 +47,7 @@ suppressPackageStartupMessages({
     library(SummarizedBenchmark)
     library(dplyr)
     library(ggplot2)
+    library(rlang)
 })
 ```
 
@@ -184,7 +185,7 @@ chipdf
 
 Each row in the data.frame corresponds to a `method + metric + cutoff` combination
 (e.g. `"unadjusted" + "rejections" + "alpha = 0.01"`). This information is stored in
-the `"blabel"`, `"performanceMetric"`, and `"alpha"` columns, with the corresponding
+the `"label"`, `"performanceMetric"`, and `"alpha"` columns, with the corresponding
 metric value in the `"value"` column. All other columns contain method metadata,
 such as the package version, when the method was evaluated.
 
@@ -193,17 +194,17 @@ parameter settings.
 
 ```{r chip-clean-cols}
 ## subset IHW
-chipdf <- dplyr:::filter(chipdf, !(grepl("ihw", blabel) & param.alpha != alpha))
-chipdf <- dplyr:::mutate(chipdf, blabel = gsub("(ihw)-a\\d+", "\\1", blabel))
+chipdf <- dplyr:::filter(chipdf, !(grepl("ihw", label) & param.alpha != alpha))
+chipdf <- dplyr:::mutate(chipdf, label = gsub("(ihw)-a\\d+", "\\1", label))
 
 ## subset BL
-chipdf <- dplyr:::filter(chipdf, ! blabel %in% paste0("bl-df0", c(2, 4, 5)))
+chipdf <- dplyr:::filter(chipdf, ! label %in% paste0("bl-df0", c(2, 4, 5)))
 ```
 
 We only keep a subset of the columns and drop NA values.
 
 ```{r chip-subset-cols}
-chipdf <- dplyr::select(chipdf, blabel, performanceMetric, alpha, value)
+chipdf <- dplyr::select(chipdf, label, performanceMetric, alpha, value)
 chipdf <- dplyr::filter(chipdf, !is.na(value))
 head(chipdf)
 ```
@@ -211,7 +212,7 @@ head(chipdf)
 We now plot the number of rejections.
 
 ```{r chip-plot-rejs, fig.width = 8, fig.height = 5}
-ggplot(chipdf, aes(x = alpha, y = value, color = blabel)) +
+ggplot(chipdf, aes(x = alpha, y = value, color = label)) +
     geom_point() +
     geom_line() +
     scale_color_viridis_d("Method") +
@@ -261,13 +262,13 @@ a subset of useful columns.
 
 ```{r yeast-clean-cols}
 ## subset IHW
-yeastdf <- dplyr:::filter(yeastdf, !(grepl("ihw", blabel) & param.alpha != alpha))
-yeastdf <- dplyr:::mutate(yeastdf, blabel = gsub("(ihw)-a\\d+", "\\1", blabel))
+yeastdf <- dplyr:::filter(yeastdf, !(grepl("ihw", label) & param.alpha != alpha))
+yeastdf <- dplyr:::mutate(yeastdf, label = gsub("(ihw)-a\\d+", "\\1", label))
 
 ## subset BL
-yeastdf <- dplyr:::filter(yeastdf, ! blabel %in% paste0("bl-df0", c(2, 4, 5)))
+yeastdf <- dplyr:::filter(yeastdf, ! label %in% paste0("bl-df0", c(2, 4, 5)))
 
-yeastdf <- dplyr::select(yeastdf, rep, blabel, performanceMetric, alpha, value)
+yeastdf <- dplyr::select(yeastdf, rep, label, performanceMetric, alpha, value)
 yeastdf <- dplyr::filter(yeastdf, !is.na(value))
 head(yeastdf)
 ```
@@ -276,7 +277,7 @@ Finally, we summarize across replications for each method, for each metric,
 at each nominal threshold.
 
 ```{r yeast-summarize}
-yeastdf <- dplyr::group_by(yeastdf, blabel, performanceMetric, alpha) 
+yeastdf <- dplyr::group_by(yeastdf, label, performanceMetric, alpha) 
 yeastdf <- dplyr::summarize(yeastdf,
                             meanValue = mean(value),
                             seValue = sd(value) / sqrt(n()))
@@ -290,7 +291,7 @@ method. Here, we will just plot FDR and TPR.
 yeastdf %>%
     dplyr::filter(performanceMetric %in% c("FDR", "TPR")) %>%
     ggplot(aes(x = alpha, y = meanValue,
-               color = blabel,
+               color = label,
                ymin = meanValue - seValue,
                ymax = meanValue + seValue)) + 
     geom_point() +
@@ -301,14 +302,88 @@ yeastdf %>%
     facet_wrap(~ performanceMetric, scales = 'free_y', nrow = 1) +
     ylab("average across replicates") +
     theme_bw() +
-    geom_abline(intercept = 0, slope = 1, color = 'red', linetype = 2,
-                data = tibble(performanceMetric = 'FDR')) +
+    geom_abline(aes(intercept = i_, slope = s_), color = 'red', linetype = 2,
+                data = tibble(performanceMetric = 'FDR', i_ = 0, s_ = 1)) +
     ggtitle("FDR and TPR across multiple-testing methods",
             "yeast in silico experiment with informative covariate")
 ```
 
 We have also included a red line to the FDR plot to assess whether methods
 are appropriately controlling the FDR at the nominal thresholds.
+
+# Adding Methods
+
+The summary objects made available with this packages were constructed using an older version
+of the `SummarizedBenchmark` package. Since then, functions have been added to the package
+for updating benchmark comparisons and adding new methods to an existing _SummarizedBenchmark_
+object. Unfortuntately, these functions cannot be used with the current objects made
+available with this package.
+
+However, the summary objects include both unadjusted p-values (as the `unadjusted` column) and
+corresponding independent covariate values (as the `ind_covariate` rowData column). These values
+can be used to apply new methods which only depend on these inputs. 
+
+```{r chip-show-data}
+dat <- tibble(pval = assay(chipres)[, "unadjusted"],
+              covariate = rowData(chipres)$ind_covariate)
+dat
+```
+
+To analyze this data using the `SummarizedBenchmark` package, we can
+construct a new _BenchDesign_ object with any collection of new methods
+to benchmark, and the above data as input. More details on the
+_SummarizedBenchmark_ package and the _BenchDesign_ class can be found in
+[the package vignettes](http://bioconductor.org/packages/SummarizedBenchmark/).
+
+As an illustration of how a new method could be applied to this data, we will
+re-apply the Benjamini-Hochberg correction and show that the results that we
+obtain in this re-analysis match the results reported in the loaded
+_SummarizedBenchmark_ object.
+
+We construct a _BenchDesign_ with a single method, `newBH`, and the data given above.
+
+```{r chip-new-benchdesign}
+bh_method <- BDMethod(x = p.adjust,
+                      params = rlang::quos(p = pval,
+                                           method = "BH"))
+new_design <- BenchDesign(newBH = bh_method, data = dat)
+new_design
+```
+
+To evaluate the benchmark experiment stored in the _BenchDesign_ object, we call
+`buildBench`.
+
+```{r chip-eval-buildBench}
+new_res <- buildBench(new_design)
+new_res
+```
+
+Now that we have a _SummarizedBenchmark_ object, we can evaluate performance
+metrics as before.
+
+```{r chip-new-metrics}
+new_res <- addPerformanceMetric(new_res, evalMetric = "rejections", assay = "default") 
+new_df <- estimatePerformanceMetrics(new_res, alpha = seq(0.01, 0.10, by = 0.01),
+                                     tidy = TRUE)
+```
+
+Finally, we subset on columns of interest and examine how many tests would be
+rejected using BH in our re-analysis.
+
+```{r chip-new-result}
+new_df <- dplyr::select(new_df, label, value, performanceMetric, alpha)
+new_df
+```
+
+We verify that this matches the number of rejections reported in the
+results from above.
+
+```{r chip-verify-bh}
+dplyr::filter(chipdf, label == "bh")
+```
+
+Since the results are now just data.frame objects with similar columns,
+they can be combined to compare new results with previous results.
 
 # Session Information
 
