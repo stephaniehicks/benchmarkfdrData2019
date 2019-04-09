@@ -104,7 +104,7 @@ Since the in silico experiments were repeated 100 times, the data object is
 a list of 100 _SummarizedBenchmark_ objects for each replication.
 
 ```{r load-yeastres}
-yeastres <- `"yeast-results-de5`()
+yeastres <- `yeast-results-de5`()
 length(yeastres)
 yeastres[[1]]
 ```
@@ -139,7 +139,7 @@ methods with different parameter settings. Briefly, the IHW method requires spec
 alpha FDR threshold while running the method. Here, the method was run with alpha values of
 `0.01, 0.02, .., 0.10`. The BL method was run with spline degrees of freedom `2, 3, 4, 5`.
 
-The corrected significance returned by each method is included in the  single assay, `"bench"`
+The corrected significance returned by each method is included in the single assay, `"bench"`
 (corresponding to the benchmarked results). 
 
 ```{r show-assay}
