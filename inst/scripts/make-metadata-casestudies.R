@@ -841,6 +841,34 @@ df_enigma_al_otus <- data.frame(
   stringsAsFactors = FALSE
 )
 
+df_enigma_al_otus_abun <- data.frame(
+  Title = "enigma-al-otus-abun-benchmark",
+  Description = "16S microbiome Spearman correlation test of ENIGMA dataset at OTU-level with Al measurements using mean abundance as covariate",
+  Series = "Microbiome",
+  M = 4007,
+  Genome = NA_character_,
+  SourceType = "TXT",
+  SourceUrl = paste("https://zenodo.org/record/1455793/files/enigma.metadata.txt",
+                    "https://zenodo.org/record/1455793/files/enigma.otu_table_resampled_updated_r.txt.gz",
+                    collapse = ","),
+  SourceVersion = paste("md5:210e7805e1f4ff000c0b2f1047b24f3c",
+                        "md5:26927389fcce3be546f66c1031044744",
+                        collapse = ","),
+  Species = "groundwater metagenome",
+  TaxonomyId = "717931",
+  Coordinate_1_based = NA_character_,
+  DataProvider = "ENIGMA consortium, John-Marc Chandonia, Physical Biosciences Division, Berkeley National Lab <https://www.mg-rast.org/linkin.cgi?project=mgp8190>",
+  TestStatistic = "Spearman correlation",
+  EffectSize = NA_character_,
+  NullProportion = NA_real_,
+  InformativeCovariate = "Mean abundance",
+  RDataClass = "SummarizedBenchmark",
+  DispatchClass = "Rds",
+  BiocVersion = "3.10",
+  Maintainer = "Keegan Korthauer <kdkorthauer@gmail.com>",
+  stringsAsFactors = FALSE
+)
+
 df_enigma_al_otus_uninf <- data.frame(
   Title = "enigma-al-otus-uninf-benchmark",
   Description = "16S microbiome Spearman correlation test of ENIGMA dataset at OTU-level with Al measurements using uninformative covariate",
@@ -2426,6 +2454,7 @@ df_all_casestudies <- base::rbind(
   df_baxter_otus,
   df_baxter_otus_logubiquity,
   df_enigma_al_otus,
+  df_enigma_al_otus_abun,
   df_enigma_al_otus_uninf,
   df_enigma_ph_otus,
   df_enigma_ph_otus_abun,
