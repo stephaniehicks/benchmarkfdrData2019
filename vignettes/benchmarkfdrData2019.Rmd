@@ -78,10 +78,16 @@ BiocManager::install("areyesq89/SummarizedBenchmark", ref = "fdrbenchmark")
 
 # Load Data 
 
-We use the `benchmarkfdrData2019` function to download the relevant files
-from _Bioconductor_'s ExperimentHub web resource.
+The data are downloaded from _Bioconductor_'s 
+[ExperimentHub](http://bioconductor.org/packages/ExperimentHub) 
+web resource. 
 
-We load two _SummarizedBenchmark_ objects to illustrate the analyses that
+```{r}
+hub = ExperimentHub()
+query(hub, "benchmarkfdrData2019")
+```
+Alternatively, datasets can be loaded individually. Here, we 
+load two _SummarizedBenchmark_ objects to illustrate the analyses that
 can be performed using the data objects available with this package.
 
 First, we load the benchmark results for a ChIP-seq case study where differential

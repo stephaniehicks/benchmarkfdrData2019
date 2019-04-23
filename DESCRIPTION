@@ -1,11 +1,14 @@
 Package: benchmarkfdrData2019
 Title: Data and Benchmarking Results from Korthauer and Kimes et al. (2019)
-Version: 0.99.0
+Version: 0.99.1
 Authors@R: c(
     person("Stephanie", "Hicks", role = c("aut", "cre"), 
-            email = "shicks19@jhu.edu"),
-    person("Keegan", "Korthauer", role = "aut"), 
-    person("Patrick", "Kimes", role = "aut"))
+            email = "shicks19@jhu.edu", 
+            comment = c(ORCID = "0000-0002-7858-0231")),
+    person("Keegan", "Korthauer", role = "aut", 
+            comment = c(ORCID = "0000-0002-4565-1654")),
+    person("Patrick", "Kimes", role = "aut"), 
+            comment = c(ORCID = "0000-0001-6819-9077"))
 Description: Preprocessed experimental and simulated data sets used 
     for evaluation of benchmarking methods controlling the false 
     discovery rate in Korthauer and Kimes et al. 2019 (Genome Biology). 

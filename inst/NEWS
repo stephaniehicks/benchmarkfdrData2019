@@ -1,0 +1,7 @@
+Changes in version 0.99.0 (2019-04-09)
++ Submitted to Bioconductor
+
+Changes in version 0.99.1 (2019-04-23)
++ Updating vignette and triggering new build after data have been moved into ExperimentHub
++ Adding CITATION and NEWS files
++ Adding ORCID for authors
