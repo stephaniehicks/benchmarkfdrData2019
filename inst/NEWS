@@ -8,3 +8,7 @@ Changes in version 0.99.1 (2019-04-23)
 
 Changes in version 0.99.2 (2019-04-23)
 + Triggering new build after adding webhook
+
+Changes in verison 0.99.3 (2019-04-23)
++ Fixed typo in DESCRIPTION file
++ Added NAMESPACE file

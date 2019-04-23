@@ -1,19 +1,19 @@
 Package: benchmarkfdrData2019
 Title: Data and Benchmarking Results from Korthauer and Kimes et al. (2019)
-Version: 0.99.2
+Version: 0.99.3
 Authors@R: c(
     person("Stephanie", "Hicks", role = c("aut", "cre"), 
             email = "shicks19@jhu.edu", 
             comment = c(ORCID = "0000-0002-7858-0231")),
     person("Keegan", "Korthauer", role = "aut", 
             comment = c(ORCID = "0000-0002-4565-1654")),
-    person("Patrick", "Kimes", role = "aut"), 
-            comment = c(ORCID = "0000-0001-6819-9077"))
+    person("Patrick", "Kimes", role = "aut", 
+            comment = c(ORCID = "0000-0001-6819-9077")))
 Description: Preprocessed experimental and simulated data sets used 
     for evaluation of benchmarking methods controlling the false 
     discovery rate in Korthauer and Kimes et al. 2019 (Genome Biology). 
-Depends: R (>= 3.6.0), SummarizedExperiment, ExperimentHub
-Imports: utils
+Depends: R (>= 3.6.0), ExperimentHub
+Imports: utils, SummarizedExperiment
 Suggests: knitr, BiocStyle, testthat, SummarizedBenchmark, dplyr, ggplot2, rlang
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -21,3 +21,4 @@ LazyData: true
 biocViews: SingleCellData, ExperimentData, RNASeqData, ExpressionData, 
     ExperimentData, ExperimentHub
 VignetteBuilder: knitr
+RoxygenNote: 6.1.1
