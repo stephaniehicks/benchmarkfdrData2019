@@ -12,3 +12,7 @@ Changes in version 0.99.2 (2019-04-23)
 Changes in verison 0.99.3 (2019-04-23)
 + Fixed typo in DESCRIPTION file
 + Added NAMESPACE file
+
+Changes in version 0.99.4 (2019-04-23)
++ Removed .Rproj file from git tracking
+
