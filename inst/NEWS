@@ -21,4 +21,7 @@ Changes in version 0.99.5 (2019-04-23)
 
 Changes in version 0.99.6 (2019-04-24)
 + Changed T/F to TRUE/FALSE in make-data Rmd files
-+ Changed class()== to is() in plotMethodRank code
++ Changed how object class is checked in plotMethodRank code
+
+Changes in version 0.99.7 (2019-04-24)
++ Changed NEWS message for 0.99.6 to prevent BiocCheck warning
