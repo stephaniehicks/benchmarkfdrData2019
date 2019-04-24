@@ -195,7 +195,7 @@ simulateOneSplit <- function(X, rseed,
                                     colData = DataFrame(groupDESeq), 
                                     design=~groupDESeq)
   dds_alt <- DESeq(dds_alt, parallel = FALSE)
-  res_alt <- results(dds_alt, independentFiltering = F)
+  res_alt <- results(dds_alt, independentFiltering = FALSE)
   
   geneExp <- tbl_df(data.frame(pval=res_alt$pvalue, SE=res_alt$lfcSE, 
                                ind_covariate = covar, 

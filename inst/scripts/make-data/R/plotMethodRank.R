@@ -259,9 +259,9 @@ tidy_df <- function(objects, colLabels, fill, annotate, alpha){
     ranks <- data.frame()
     
     for (i in seq_along(objects)){
-        if ( class(objects[[i]]) == "character") {
+        if ( is(objects[[i]], "character")) {
             x <- readRDS(objects[i])
-        }else if ( class(objects[[i]]) == "SummarizedBenchmark") {
+        }else if ( is(objects[[i]], "SummarizedBenchmark")) {
             x <- objects[[i]]
         }
         

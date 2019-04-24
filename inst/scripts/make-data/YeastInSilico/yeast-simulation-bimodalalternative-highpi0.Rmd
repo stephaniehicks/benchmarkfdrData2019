@@ -195,11 +195,11 @@ subset <- cbind(subset.wt[, sample(1:ncol(subset.wt), 10)],
 
 dds <- DESeq(subset)
 resultsNames(dds) # lists the coefficients
-res_10 <- results(dds, name="condition_WT_vs_Snf2", independentFiltering = F)
+res_10 <- results(dds, name="condition_WT_vs_Snf2", independentFiltering = FALSE)
 
 head(res_10)
 
-sum(res_10$padj < 0.05, na.rm=T)
+sum(res_10$padj < 0.05, na.rm = TRUE)
 ```
 
 Check densities of the test statistic and effect sizes for significant DE genes.
@@ -337,11 +337,11 @@ subset <- cbind(subset.wt[, sample(1:ncol(subset.wt), 5)],
 
 dds <- DESeq(subset)
 resultsNames(dds) # lists the coefficients
-res_5 <- results(dds, name="condition_WT_vs_Snf2", independentFiltering = F)
+res_5 <- results(dds, name="condition_WT_vs_Snf2", independentFiltering = FALSE)
 
 head(res_5)
 
-sum(res_5$padj < 0.05, na.rm=T)
+sum(res_5$padj < 0.05, na.rm = TRUE)
 ```
 
 Check densities of the test statistic and effect sizes for significant DE genes.

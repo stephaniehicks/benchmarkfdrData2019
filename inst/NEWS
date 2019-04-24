@@ -19,3 +19,6 @@ Changes in version 0.99.4 (2019-04-23)
 Changes in version 0.99.5 (2019-04-23)
 + Deleted and untracked .Rproj file
 
+Changes in version 0.99.6 (2019-04-24)
++ Changed T/F to TRUE/FALSE in make-data Rmd files
++ Changed class()== to is() in plotMethodRank code
