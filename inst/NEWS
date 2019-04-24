@@ -16,3 +16,6 @@ Changes in verison 0.99.3 (2019-04-23)
 Changes in version 0.99.4 (2019-04-23)
 + Removed .Rproj file from git tracking
 
+Changes in version 0.99.5 (2019-04-23)
++ Deleted and untracked .Rproj file
+
