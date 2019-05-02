@@ -6,7 +6,7 @@
 df_sim_null_gaussian <- data.frame(
   Title = "null-benchmark-gaussian",
   Description = "100 replicates of null simulations with standard Gaussian distributed test statistics used in Korthauer, Kimes et al. (2019).",
-  Series = "Null",
+  Series = "Sim_Null",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "none",
@@ -23,7 +23,7 @@ df_sim_null_gaussian <- data.frame(
 df_sim_null_t11 <- data.frame(
   Title = "null-benchmark-t11",
   Description = "100 replicates of null simulations with t (11 degrees of freedom) distributed test statistics used in Korthauer, Kimes et al. (2019).",
-  Series = "Null",
+  Series = "Sim_Null",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "none",
@@ -40,7 +40,7 @@ df_sim_null_t11 <- data.frame(
 df_sim_null_t5 <- data.frame(
   Title = "null-benchmark-t5",
   Description = "100 replicates of null simulations with t (5 degrees of freedom) distributed test statistics used in Korthauer, Kimes et al. (2019).",
-  Series = "Null",
+  Series = "Sim_Null",
   M = 20000,
   TestStatistic = "t5",
   EffectSize = "none",
@@ -57,7 +57,7 @@ df_sim_null_t5 <- data.frame(
 df_sim_null_chisq4 <- data.frame(
   Title = "null-benchmark-chisq4",
   Description = "100 replicates of null simulations with chi-squared (4 degrees of freedom) distributed test statistics used in Korthauer, Kimes et al. (2019).",
-  Series = "Null",
+  Series = "Sim_Null",
   M = 20000,
   TestStatistic = "ChiSq4",
   EffectSize = "none",
@@ -77,7 +77,7 @@ df_sim_null_chisq4 <- data.frame(
 df_sim_informative_cubic_gaussian <- data.frame(
   Title = "informative-cubic-benchmark-gaussian",
   Description = "100 replicates of simulation with standard Gaussian distributed test statistics with 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Cubic",
+  Series = "Sim_Informative_Cubic",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -94,7 +94,7 @@ df_sim_informative_cubic_gaussian <- data.frame(
 df_sim_informative_cubic_t11 <- data.frame(
   Title = "informative-cubic-benchmark-t11",
   Description = "100 replicates of simulation with t (11 degrees of freedom) distributed test statistics with 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Cubic",
+  Series = "Sim_Informative_Cubic",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(3, 1)",
@@ -111,7 +111,7 @@ df_sim_informative_cubic_t11 <- data.frame(
 df_sim_informative_cubic_t5 <- data.frame(
   Title = "informative-cubic-benchmark-t5",
   Description = "100 replicates of simulation with t (5 degrees of freedom) distributed test statistics with 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Cubic",
+  Series = "Sim_Informative_Cubic",
   M = 20000,
   TestStatistic = "t5",
   EffectSize = "N(3, 1)",
@@ -128,7 +128,7 @@ df_sim_informative_cubic_t5 <- data.frame(
 df_sim_informative_cubic_chisq4 <- data.frame(
   Title = "informative-cubic-benchmark-chisq4",
   Description = "100 replicates of simulation with chi-squared (4 degrees of freedom) distributed test statistics with 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Cubic",
+  Series = "Sim_Informative_Cubic",
   M = 20000,
   TestStatistic = "ChiSq4",
   EffectSize = "N(15, 1)",
@@ -148,7 +148,7 @@ df_sim_informative_cubic_chisq4 <- data.frame(
 df_sim_informative_step_gaussian <- data.frame(
   Title = "informative-step-benchmark-gaussian",
   Description = "100 replicates of simulation with standard Gaussian distributed test statistics with 'step' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Step",
+  Series = "Sim_Informative_Step",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -165,7 +165,7 @@ df_sim_informative_step_gaussian <- data.frame(
 df_sim_informative_step_t11 <- data.frame(
   Title = "informative-step-benchmark-t11",
   Description = "100 replicates of simulation with t (11 degrees of freedom) distributed test statistics with 'step' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Step",
+  Series = "Sim_Informative_Step",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(3, 1)",
@@ -182,7 +182,7 @@ df_sim_informative_step_t11 <- data.frame(
 df_sim_informative_step_t5 <- data.frame(
   Title = "informative-step-benchmark-t5",
   Description = "100 replicates of simulation with t (5 degrees of freedom) distributed test statistics with 'step' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Step",
+  Series = "Sim_Informative_Step",
   M = 20000,
   TestStatistic = "t5",
   EffectSize = "N(3, 1)",
@@ -199,7 +199,7 @@ df_sim_informative_step_t5 <- data.frame(
 df_sim_informative_step_chisq4 <- data.frame(
   Title = "informative-step-benchmark-chisq4",
   Description = "100 replicates of simulation with chi-squared (4 degrees of freedom) distributed test statistics with 'step' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Step",
+  Series = "Sim_Informative_Step",
   M = 20000,
   TestStatistic = "ChiSq4",
   EffectSize = "N(15, 1)",
@@ -219,7 +219,7 @@ df_sim_informative_step_chisq4 <- data.frame(
 df_sim_informative_sine_gaussian <- data.frame(
   Title = "informative-sine-benchmark-gaussian",
   Description = "100 replicates of simulation with standard Gaussian distributed test statistics with 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Sine",
+  Series = "Sim_Informative_Sine",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -236,7 +236,7 @@ df_sim_informative_sine_gaussian <- data.frame(
 df_sim_informative_sine_t11 <- data.frame(
   Title = "informative-sine-benchmark-t11",
   Description = "100 replicates of simulation with t (11 degrees of freedom) distributed test statistics with 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Sine",
+  Series = "Sim_Informative_Sine",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(3, 1)",
@@ -253,7 +253,7 @@ df_sim_informative_sine_t11 <- data.frame(
 df_sim_informative_sine_t5 <- data.frame(
   Title = "informative-sine-benchmark-t5",
   Description = "100 replicates of simulation with t (5 degrees of freedom) distributed test statistics with 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Sine",
+  Series = "Sim_Informative_Sine",
   M = 20000,
   TestStatistic = "t5",
   EffectSize = "N(3, 1)",
@@ -270,7 +270,7 @@ df_sim_informative_sine_t5 <- data.frame(
 df_sim_informative_sine_chisq4 <- data.frame(
   Title = "informative-sine-benchmark-chisq4",
   Description = "100 replicates of simulation with chi-squared (4 degrees of freedom) distributed test statistics with 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Sine",
+  Series = "Sim_Informative_Sine",
   M = 20000,
   TestStatistic = "ChiSq4",
   EffectSize = "N(15, 1)",
@@ -290,7 +290,7 @@ df_sim_informative_sine_chisq4 <- data.frame(
 df_sim_informative_cosine_gaussian <- data.frame(
   Title = "informative-cosine-benchmark-gaussian",
   Description = "100 replicates of simulation with standard Gaussian distributed test statistics with 'cosine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Cosine",
+  Series = "Sim_Informative_Cosine",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -307,7 +307,7 @@ df_sim_informative_cosine_gaussian <- data.frame(
 df_sim_informative_cosine_t11 <- data.frame(
   Title = "informative-cosine-benchmark-t11",
   Description = "100 replicates of simulation with t (11 degrees of freedom) distributed test statistics with 'cosine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Cosine",
+  Series = "Sim_Informative_Cosine",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(3, 1)",
@@ -324,7 +324,7 @@ df_sim_informative_cosine_t11 <- data.frame(
 df_sim_informative_cosine_t5 <- data.frame(
   Title = "informative-cosine-benchmark-t5",
   Description = "100 replicates of simulation with t (5 degrees of freedom) distributed test statistics with 'cosine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Cosine",
+  Series = "Sim_Informative_Cosine",
   M = 20000,
   TestStatistic = "t5",
   EffectSize = "N(3, 1)",
@@ -341,7 +341,7 @@ df_sim_informative_cosine_t5 <- data.frame(
 df_sim_informative_cosine_chisq4 <- data.frame(
   Title = "informative-cosine-benchmark-chisq4",
   Description = "100 replicates of simulation with chi-squared (4 degrees of freedom) distributed test statistics with 'cosine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Informative_Cosine",
+  Series = "Sim_Informative_Cosine",
   M = 20000,
   TestStatistic = "ChiSq4",
   EffectSize = "N(15, 1)",
@@ -361,7 +361,7 @@ df_sim_informative_cosine_chisq4 <- data.frame(
 df_sim_uasettings_bimodal_gaussian <- data.frame(
   Title = "uasettings-benchmark-bimodal",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'bimodal' non-null effect size distribution, standard Gaussian distributed test statistics, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_Gaussian",
+  Series = "Sim_Unimodal_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "Bimodal",
@@ -378,7 +378,7 @@ df_sim_uasettings_bimodal_gaussian <- data.frame(
 df_sim_uasettings_spiky_gaussian <- data.frame(
   Title = "uasettings-benchmark-spiky",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'spiky' non-null effect size distribution, standard Gaussian distributed test statistics, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_Gaussian",
+  Series = "Sim_Unimodal_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "Spiky",
@@ -395,7 +395,7 @@ df_sim_uasettings_spiky_gaussian <- data.frame(
 df_sim_uasettings_flattop_gaussian <- data.frame(
   Title = "uasettings-benchmark-flattop",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'flat-top' non-null effect size distribution, standard Gaussian distributed test statistics, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_Gaussian",
+  Series = "Sim_Unimodal_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "Flat-top",
@@ -412,7 +412,7 @@ df_sim_uasettings_flattop_gaussian <- data.frame(
 df_sim_uasettings_skew_gaussian <- data.frame(
   Title = "uasettings-benchmark-skew",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'skewed' non-null effect size distribution, standard Gaussian distributed test statistics, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_Gaussian",
+  Series = "Sim_Unimodal_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "Skewed",
@@ -432,7 +432,7 @@ df_sim_uasettings_skew_gaussian <- data.frame(
 df_sim_uasettings_bimodal_t11 <- data.frame(
   Title = "uasettings-t-benchmark-bimodal",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'bimodal' non-null effect size distribution, t (11 degrees of freedom) distributed test statistics, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_t11",
+  Series = "Sim_Unimodal_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "Bimodal",
@@ -449,7 +449,7 @@ df_sim_uasettings_bimodal_t11 <- data.frame(
 df_sim_uasettings_spiky_t11 <- data.frame(
   Title = "uasettings-t-benchmark-spiky",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'spiky' non-null effect size distribution, t (11 degrees of freedom) distributed test statistics, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_t11",
+  Series = "Sim_Unimodal_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "Spiky",
@@ -466,7 +466,7 @@ df_sim_uasettings_spiky_t11 <- data.frame(
 df_sim_uasettings_flattop_t11 <- data.frame(
   Title = "uasettings-t-benchmark-flattop",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'flat-top' non-null effect size distribution, t (11 degrees of freedom) distributed test statistics, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_t11",
+  Series = "Sim_Unimodal_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "Flat-top",
@@ -483,7 +483,7 @@ df_sim_uasettings_flattop_t11 <- data.frame(
 df_sim_uasettings_skew_t11 <- data.frame(
   Title = "uasettings-t-benchmark-skew",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'skewed' non-null effect size distribution, t (11 degrees of freedom) distributed test statistics, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_t11",
+  Series = "Sim_Unimodal_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "Skewed",
@@ -503,7 +503,7 @@ df_sim_uasettings_skew_t11 <- data.frame(
 df_sim_uasettings_bimodal_25_gaussian <- data.frame(
   Title = "uasettings-25-benchmark-bimodal",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'bimodal' non-null effect size distribution, standard Gaussian distributed test statistics, 25% non-null tests, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_25nonnull",
+  Series = "Sim_Unimodal_25nonnull",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "Bimodal",
@@ -520,7 +520,7 @@ df_sim_uasettings_bimodal_25_gaussian <- data.frame(
 df_sim_uasettings_spiky_25_gaussian <- data.frame(
   Title = "uasettings-25-benchmark-spiky",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'spiky' non-null effect size distribution, standard Gaussian distributed test statistics, 25% non-null tests, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_25nonnull",
+  Series = "Sim_Unimodal_25nonnull",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "Spiky",
@@ -537,7 +537,7 @@ df_sim_uasettings_spiky_25_gaussian <- data.frame(
 df_sim_uasettings_flattop_25_gaussian <- data.frame(
   Title = "uasettings-25-benchmark-flattop",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'flat-top' non-null effect size distribution, standard Gaussian distributed test statistics, 25% non-null tests, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_25nonnull",
+  Series = "Sim_Unimodal_25nonnull",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "Flat-top",
@@ -554,7 +554,7 @@ df_sim_uasettings_flattop_25_gaussian <- data.frame(
 df_sim_uasettings_skew_25_gaussian <- data.frame(
   Title = "uasettings-25-benchmark-skew",
   Description = "100 replicates of simulation from 'unimodal' series of effect size distributions from Stephens (2016) with 'skewed' non-null effect size distribution, standard Gaussian distributed test statistics, 25% non-null tests, and 'cubic' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "Unimodal_25nonnull",
+  Series = "Sim_Unimodal_25nonnull",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "Skewed",
@@ -574,7 +574,7 @@ df_sim_uasettings_skew_25_gaussian <- data.frame(
 df_sim_varyingntests_n100 <- data.frame(
   Title = "varyingntests-benchmark-n100",
   Description = "100 replicates of simulation varying number of tests with 100 tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingMtests",
+  Series = "Sim_VaryingMtests",
   M = 100,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -591,7 +591,7 @@ df_sim_varyingntests_n100 <- data.frame(
 df_sim_varyingntests_n500 <- data.frame(
   Title = "varyingntests-benchmark-n500",
   Description = "100 replicates of simulation varying number of tests with 500 tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingMtests",
+  Series = "Sim_VaryingMtests",
   M = 500,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -608,7 +608,7 @@ df_sim_varyingntests_n500 <- data.frame(
 df_sim_varyingntests_n1000 <- data.frame(
   Title = "varyingntests-benchmark-n1000",
   Description = "100 replicates of simulation varying number of tests with 1000 tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingMtests",
+  Series = "Sim_VaryingMtests",
   M = 1000,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -625,7 +625,7 @@ df_sim_varyingntests_n1000 <- data.frame(
 df_sim_varyingntests_n5000 <- data.frame(
   Title = "varyingntests-benchmark-n5000",
   Description = "100 replicates of simulation varying number of tests with 5000 tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingMtests",
+  Series = "Sim_VaryingMtests",
   M = 5000,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -642,7 +642,7 @@ df_sim_varyingntests_n5000 <- data.frame(
 df_sim_varyingntests_n10000 <- data.frame(
   Title = "varyingntests-benchmark-n10000",
   Description = "100 replicates of simulation varying number of tests with 10000 tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingMtests",
+  Series = "Sim_VaryingMtests",
   M = 10000,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -659,7 +659,7 @@ df_sim_varyingntests_n10000 <- data.frame(
 df_sim_varyingntests_n50000 <- data.frame(
   Title = "varyingntests-benchmark-n50000",
   Description = "100 replicates of simulation varying number of tests with 50000 tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingMtests",
+  Series = "Sim_VaryingMtests",
   M = 50000,
   TestStatistic = "Gaussian",
   EffectSize = "N(3, 1)",
@@ -679,7 +679,7 @@ df_sim_varyingntests_n50000 <- data.frame(
 df_sim_varyingpi0_05_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop05",
   Description = "100 replicates of simulation varying null proportion with 5% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -696,7 +696,7 @@ df_sim_varyingpi0_05_gaussian <- data.frame(
 df_sim_varyingpi0_10_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop10",
   Description = "100 replicates of simulation varying null proportion with 10% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -713,7 +713,7 @@ df_sim_varyingpi0_10_gaussian <- data.frame(
 df_sim_varyingpi0_20_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop20",
   Description = "100 replicates of simulation varying null proportion with 20% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -730,7 +730,7 @@ df_sim_varyingpi0_20_gaussian <- data.frame(
 df_sim_varyingpi0_30_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop30",
   Description = "100 replicates of simulation varying null proportion with 30% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -747,7 +747,7 @@ df_sim_varyingpi0_30_gaussian <- data.frame(
 df_sim_varyingpi0_40_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop40",
   Description = "100 replicates of simulation varying null proportion with 40% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -764,7 +764,7 @@ df_sim_varyingpi0_40_gaussian <- data.frame(
 df_sim_varyingpi0_50_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop50",
   Description = "100 replicates of simulation varying null proportion with 50% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -781,7 +781,7 @@ df_sim_varyingpi0_50_gaussian <- data.frame(
 df_sim_varyingpi0_60_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop60",
   Description = "100 replicates of simulation varying null proportion with 60% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -798,7 +798,7 @@ df_sim_varyingpi0_60_gaussian <- data.frame(
 df_sim_varyingpi0_70_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop70",
   Description = "100 replicates of simulation varying null proportion with 70% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -815,7 +815,7 @@ df_sim_varyingpi0_70_gaussian <- data.frame(
 df_sim_varyingpi0_80_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop80",
   Description = "100 replicates of simulation varying null proportion with 80% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -832,7 +832,7 @@ df_sim_varyingpi0_80_gaussian <- data.frame(
 df_sim_varyingpi0_90_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop90",
   Description = "100 replicates of simulation varying null proportion with 90% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -849,7 +849,7 @@ df_sim_varyingpi0_90_gaussian <- data.frame(
 df_sim_varyingpi0_95_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop95",
   Description = "100 replicates of simulation varying null proportion with 95% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -866,7 +866,7 @@ df_sim_varyingpi0_95_gaussian <- data.frame(
 df_sim_varyingpi0_99_gaussian <- data.frame(
   Title = "varyingpi0-benchmark-nullprop99",
   Description = "100 replicates of simulation varying null proportion with 99% null tests, standard Gaussian distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_Gaussian",
+  Series = "Sim_VaryingNullProp_Gaussian",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -886,7 +886,7 @@ df_sim_varyingpi0_99_gaussian <- data.frame(
 df_sim_varyingpi0_05_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop05",
   Description = "100 replicates of simulation varying null proportion with 5% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -903,7 +903,7 @@ df_sim_varyingpi0_05_t11 <- data.frame(
 df_sim_varyingpi0_10_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop10",
   Description = "100 replicates of simulation varying null proportion with 10% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -920,7 +920,7 @@ df_sim_varyingpi0_10_t11 <- data.frame(
 df_sim_varyingpi0_20_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop20",
   Description = "100 replicates of simulation varying null proportion with 20% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -937,7 +937,7 @@ df_sim_varyingpi0_20_t11 <- data.frame(
 df_sim_varyingpi0_30_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop30",
   Description = "100 replicates of simulation varying null proportion with 30% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -954,7 +954,7 @@ df_sim_varyingpi0_30_t11 <- data.frame(
 df_sim_varyingpi0_40_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop40",
   Description = "100 replicates of simulation varying null proportion with 40% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -971,7 +971,7 @@ df_sim_varyingpi0_40_t11 <- data.frame(
 df_sim_varyingpi0_50_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop50",
   Description = "100 replicates of simulation varying null proportion with 50% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -988,7 +988,7 @@ df_sim_varyingpi0_50_t11 <- data.frame(
 df_sim_varyingpi0_60_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop60",
   Description = "100 replicates of simulation varying null proportion with 60% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -1005,7 +1005,7 @@ df_sim_varyingpi0_60_t11 <- data.frame(
 df_sim_varyingpi0_70_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop70",
   Description = "100 replicates of simulation varying null proportion with 70% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -1022,7 +1022,7 @@ df_sim_varyingpi0_70_t11 <- data.frame(
 df_sim_varyingpi0_80_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop80",
   Description = "100 replicates of simulation varying null proportion with 80% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -1039,7 +1039,7 @@ df_sim_varyingpi0_80_t11 <- data.frame(
 df_sim_varyingpi0_90_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop90",
   Description = "100 replicates of simulation varying null proportion with 90% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -1056,7 +1056,7 @@ df_sim_varyingpi0_90_t11 <- data.frame(
 df_sim_varyingpi0_95_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop95",
   Description = "100 replicates of simulation varying null proportion with 95% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -1073,7 +1073,7 @@ df_sim_varyingpi0_95_t11 <- data.frame(
 df_sim_varyingpi0_99_t11 <- data.frame(
   Title = "varyingpi0-t-benchmark-nullprop99",
   Description = "100 replicates of simulation varying null proportion with 99% null tests, t (11 degrees of freedom) distributed test statistics, and 'sine' informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019).",
-  Series = "VaryingNullProp_t11",
+  Series = "Sim_VaryingNullProp_t11",
   M = 20000,
   TestStatistic = "t11",
   EffectSize = "N(2, 1)",
@@ -1093,7 +1093,7 @@ df_sim_varyingpi0_99_t11 <- data.frame(
 df_sim_varyinginfo_00_smooth <- data.frame(
   Title = "varyinginfo-smooth-benchmark-level00",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 0, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a smooth function of the informative covariate.",
-  Series = "VaryingInfo_Smooth",
+  Series = "Sim_VaryingInfo_Smooth",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1110,7 +1110,7 @@ df_sim_varyinginfo_00_smooth <- data.frame(
 df_sim_varyinginfo_20_smooth <- data.frame(
   Title = "varyinginfo-smooth-benchmark-level20",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 20, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a smooth function of the informative covariate.",
-  Series = "VaryingInfo_Smooth",
+  Series = "Sim_VaryingInfo_Smooth",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1127,7 +1127,7 @@ df_sim_varyinginfo_20_smooth <- data.frame(
 df_sim_varyinginfo_40_smooth <- data.frame(
   Title = "varyinginfo-smooth-benchmark-level40",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 40, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a smooth function of the informative covariate.",
-  Series = "VaryingInfo_Smooth",
+  Series = "Sim_VaryingInfo_Smooth",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1144,7 +1144,7 @@ df_sim_varyinginfo_40_smooth <- data.frame(
 df_sim_varyinginfo_60_smooth <- data.frame(
   Title = "varyinginfo-smooth-benchmark-level60",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 60, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a smooth function of the informative covariate.",
-  Series = "VaryingInfo_Smooth",
+  Series = "Sim_VaryingInfo_Smooth",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1161,7 +1161,7 @@ df_sim_varyinginfo_60_smooth <- data.frame(
 df_sim_varyinginfo_80_smooth <- data.frame(
   Title = "varyinginfo-smooth-benchmark-level80",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 80, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a smooth function of the informative covariate.",
-  Series = "VaryingInfo_Smooth",
+  Series = "Sim_VaryingInfo_Smooth",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1178,7 +1178,7 @@ df_sim_varyinginfo_80_smooth <- data.frame(
 df_sim_varyinginfo_100_smooth <- data.frame(
   Title = "varyinginfo-smooth-benchmark-level100",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 100, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a smooth function of the informative covariate.",
-  Series = "VaryingInfo_Smooth",
+  Series = "Sim_VaryingInfo_Smooth",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1198,7 +1198,7 @@ df_sim_varyinginfo_100_smooth <- data.frame(
 df_sim_varyinginfo_00_discrete <- data.frame(
   Title = "varyinginfo-discrete-benchmark-level00",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 0, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a discrete, non-smooth, function of the informative covariate.",
-  Series = "VaryingInfo_Discrete",
+  Series = "Sim_VaryingInfo_Discrete",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1215,7 +1215,7 @@ df_sim_varyinginfo_00_discrete <- data.frame(
 df_sim_varyinginfo_20_discrete <- data.frame(
   Title = "varyinginfo-discrete-benchmark-level20",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 20, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a discrete, non-smooth, function of the informative covariate.",
-  Series = "VaryingInfo_Discrete",
+  Series = "Sim_VaryingInfo_Discrete",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1232,7 +1232,7 @@ df_sim_varyinginfo_20_discrete <- data.frame(
 df_sim_varyinginfo_40_discrete <- data.frame(
   Title = "varyinginfo-discrete-benchmark-level40",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 40, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a discrete, non-smooth, function of the informative covariate.",
-  Series = "VaryingInfo_Discrete",
+  Series = "Sim_VaryingInfo_Discrete",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1249,7 +1249,7 @@ df_sim_varyinginfo_40_discrete <- data.frame(
 df_sim_varyinginfo_60_discrete <- data.frame(
   Title = "varyinginfo-discrete-benchmark-level60",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 60, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a discrete, non-smooth, function of the informative covariate.",
-  Series = "VaryingInfo_Discrete",
+  Series = "Sim_VaryingInfo_Discrete",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1266,7 +1266,7 @@ df_sim_varyinginfo_60_discrete <- data.frame(
 df_sim_varyinginfo_80_discrete <- data.frame(
   Title = "varyinginfo-discrete-benchmark-level80",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 80, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a discrete, non-smooth, function of the informative covariate.",
-  Series = "VaryingInfo_Discrete",
+  Series = "Sim_VaryingInfo_Discrete",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
@@ -1283,7 +1283,7 @@ df_sim_varyinginfo_80_discrete <- data.frame(
 df_sim_varyinginfo_100_discrete <- data.frame(
   Title = "varyinginfo-discrete-benchmark-level100",
   Description = "100 replicates of simulation varying covariate informativeness with informativeness parameter delta = 100, standard Gaussian distributed test statistics, and informative and paired uninformative covariates used in Korthauer, Kimes et al. (2019). The conditional probability of a test being null is defined by a discrete, non-smooth, function of the informative covariate.",
-  Series = "VaryingInfo_Discrete",
+  Series = "Sim_VaryingInfo_Discrete",
   M = 20000,
   TestStatistic = "Gaussian",
   EffectSize = "N(2, 1)",
