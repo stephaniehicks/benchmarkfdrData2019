@@ -1,0 +1,514 @@
+#' @title Simulation study results (null settings)
+#' 
+#' @description
+#' Results for null simulations used in Korthauer and Kimes et al. (2019) stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' Simulations were performed with standard Gaussian, \eqn{t_5}, \eqn{t_{11}},
+#' and \eqn{\chi_4} distributed test statistics.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#' 
+#' @examples
+#' \dontrun{
+#' `null-benchmark-gaussian`()
+#' `null-benchmark-t11`()
+#' `null-benchmark-t5`()
+#' `null-benchmark-chisq4`()
+#'
+#' res <- `null-benchmark-chisq4`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @aliases null-benchmark-chisq4 null-benchmark-gaussian null-benchmark-t11 null-benchmark-t5
+#' @name null-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (cosine covariate)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019) with `cosine'
+#' informative and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' Simulations were performed with standard Gaussian, \eqn{t_5}, \eqn{t_{11}},
+#' and \eqn{\chi_4} distributed test statistics.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#' 
+#' @examples
+#' \dontrun{
+#' `informative-cosine-benchmark-gaussian`()
+#' `informative-cosine-benchmark-t11`()
+#' `informative-cosine-benchmark-t5`()
+#' `informative-cosine-benchmark-chisq4`()
+#'
+#' res <- `informative-cosine-benchmark-chisq4`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @aliases informative-cosine-benchmark-chisq4 informative-cosine-benchmark-gaussian informative-cosine-benchmark-t11 informative-cosine-benchmark-t5
+#' @name informative-cosine-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (cubic covariate)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019) with `cubic'
+#' informative and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' Simulations were performed with standard Gaussian, \eqn{t_5}, \eqn{t_{11}},
+#' and \eqn{\chi_4} distributed test statistics.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#' 
+#' @examples
+#' \dontrun{
+#' `informative-cubic-benchmark-gaussian`()
+#' `informative-cubic-benchmark-t11`()
+#' `informative-cubic-benchmark-t5`()
+#' `informative-cubic-benchmark-chisq4`()
+#'
+#' res <- `informative-cubic-benchmark-chisq4`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @aliases informative-cubic-benchmark-chisq4 informative-cubic-benchmark-gaussian informative-cubic-benchmark-t11 informative-cubic-benchmark-t5
+#' @name informative-cubic-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (sine covariate)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019) with `sine'
+#' informative and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' Simulations were performed with standard Gaussian, \eqn{t_5}, \eqn{t_{11}},
+#' and \eqn{\chi_4} distributed test statistics.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#' 
+#' @examples
+#' \dontrun{
+#' `informative-sine-benchmark-gaussian`()
+#' `informative-sine-benchmark-t11`()
+#' `informative-sine-benchmark-t5`()
+#' `informative-sine-benchmark-chisq4`()
+#'
+#' res <- `informative-sine-benchmark-chisq4`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @aliases informative-sine-benchmark-chisq4 informative-sine-benchmark-gaussian informative-sine-benchmark-t11 informative-sine-benchmark-t5
+#' @name informative-sine-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (step covariate)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019) with `step'
+#' informative and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' Simulations were performed with standard Gaussian, \eqn{t_5}, \eqn{t_{11}},
+#' and \eqn{\chi_4} distributed test statistics.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#' 
+#' @examples
+#' \dontrun{
+#' `informative-step-benchmark-gaussian`()
+#' `informative-step-benchmark-t11`()
+#' `informative-step-benchmark-t5`()
+#' `informative-step-benchmark-chisq4`()
+#'
+#' res <- `informative-step-benchmark-chisq4`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @aliases informative-step-benchmark-chisq4 informative-step-benchmark-gaussian informative-step-benchmark-t11 informative-step-benchmark-t5
+#' @name informative-step-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (unimodal, Gaussian-distributed)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019)
+#' with 'unimodal' series of effect size distributions (Stephens, 2017)
+#' with standard Gaussian distributed test statistics, and `cubic' informative
+#' and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications.
+#' In each simulation, 10\% of tests were non-null, i.e. had non-zero effect sizes.
+#' Simulations were performed with `bimodal', `flat top', `skew' and `spiky'
+#' effect size distributions (see corresponding reference for details).
+#'
+#' In \code{\link{uasettings-t-benchmark}} and \code{\link{uasettings-25-benchmark}},
+#' similar settings were considered, but with \eqn{t_{11}} distributed test statistics
+#' and 25\% of tests being non-null, respectively.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#'
+#' @references
+#' \itemize{
+#' \item Stephens, M. (2017). False discovery rates: a new deal. Biostatistics, 18(2), 275-294.
+#' }
+#' 
+#' @examples
+#' \dontrun{
+#' `uasettings-benchmark-bimodal`()
+#' `uasettings-benchmark-flattop`()
+#' `uasettings-benchmark-skew`()
+#' `uasettings-benchmark-spiky`()
+#'
+#' res <- `uasettings-benchmark-spiky`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#'
+#' @seealso \code{\link{uasettings-t-benchmark}}, \code{\link{uasettings-25-benchmark}}
+#' @aliases uasettings-benchmark-bimodal uasettings-benchmark-flattop uasettings-benchmark-skew uasettings-benchmark-spiky
+#' @name uasettings-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (unimodal, t-distributed)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019)
+#' with 'unimodal' series of effect size distributions (Stephens, 2017)
+#' with \eqn{t_{11}} distributed test statistics, and `cubic' informative
+#' and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications.
+#' In each simulation, 10\% of tests were non-null, i.e. had non-zero effect sizes.
+#' Simulations were performed with `bimodal', `flat top', `skew' and `spiky'
+#' effect size distributions (see corresponding reference for details).
+#'
+#' In \code{\link{uasettings-benchmark}} and \code{\link{uasettings-25-benchmark}},
+#' similar settings were considered, but with standard Gaussian distributed test statistics
+#' and 25\% of tests being non-null, respectively.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#'
+#' @references
+#' \itemize{
+#' \item Stephens, M. (2017). False discovery rates: a new deal. Biostatistics, 18(2), 275-294.
+#' }
+#' 
+#' @examples
+#' \dontrun{
+#' `uasettings-t-benchmark-bimodal`()
+#' `uasettings-t-benchmark-flattop`()
+#' `uasettings-t-benchmark-skew`()
+#' `uasettings-t-benchmark-spiky`()
+#' 
+#' res <- `uasettings-t-benchmark-spiky`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @seealso \code{\link{uasettings-benchmark}}, \code{\link{uasettings-25-benchmark}}
+#' @aliases uasettings-t-benchmark-bimodal uasettings-t-benchmark-flattop uasettings-t-benchmark-skew uasettings-t-benchmark-spiky
+#' @name uasettings-t-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (unimodal, 25\% non-null)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019)
+#' with 'unimodal' series of effect size distributions (Stephens, 2017)
+#' with standard Gaussian distributed test statistics, and `cubic' informative
+#' and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications.
+#' In each simulation, 25\% of tests were non-null, i.e. had non-zero effect sizes.
+#' Simulations were performed with `bimodal', `flat top', `skew' and `spiky'
+#' effect size distributions (see corresponding reference for details).
+#'
+#' In \code{\link{uasettings-benchmark}},
+#' similar settings were considered, but with 10\% of tests being non-null.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#'
+#' @references
+#' \itemize{
+#' \item Stephens, M. (2017). False discovery rates: a new deal. Biostatistics, 18(2), 275-294.
+#' }
+#'
+#' @examples
+#' \dontrun{
+#' `uasettings-25-benchmark-bimodal`()
+#' `uasettings-25-benchmark-flattop`()
+#' `uasettings-25-benchmark-skew`()
+#' `uasettings-25-benchmark-spiky`()
+#' 
+#' res <- `uasettings-25-benchmark-spiky`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#'
+#' @seealso \code{\link{uasettings-benchmark}}
+#' @aliases uasettings-25-benchmark-bimodal uasettings-25-benchmark-flattop uasettings-25-benchmark-skew uasettings-25-benchmark-spiky
+#' @name uasettings-25-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (varying information, discrete)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019) across varying
+#' covariate informativeness, using standard Gaussian distributed test statistics,
+#' and informative and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' An informative covariate with tunable informativeness was defined with a
+#' rough informativeness parameter, delta, defined between 0 and 100.
+#' Simulations were performed with delta values of 0, 20, 40, 60, 80, and 100.
+#' The conditional probability of a test being null was
+#' defined by a discrete, non-smooth, function of the informative covariate.
+#'
+#' In \code{\link{varyinginfo-smooth-benchmark}},
+#' similar settings were considered, but using a smooth relationship between the
+#' condition probability of a test being null and the informative covariate.
+#'  
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#'
+#' @examples
+#' \dontrun{
+#' `varyinginfo-discrete-benchmark-level00`()
+#' `varyinginfo-discrete-benchmark-level20`()
+#' `varyinginfo-discrete-benchmark-level40`()
+#' `varyinginfo-discrete-benchmark-level60`()
+#' `varyinginfo-discrete-benchmark-level80`()
+#' `varyinginfo-discrete-benchmark-level100`()
+#'
+#' res <- `varyinginfo-discrete-benchmark-level100`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @seealso \code{\link{varyinginfo-smooth-benchmark}}
+#' @aliases varyinginfo-discrete-benchmark-level00 varyinginfo-discrete-benchmark-level20 varyinginfo-discrete-benchmark-level40 varyinginfo-discrete-benchmark-level60 varyinginfo-discrete-benchmark-level80 varyinginfo-discrete-benchmark-level100
+#' @name varyinginfo-discrete-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (varying information, smooth)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019) across varying
+#' covariate informativeness, using standard Gaussian distributed test statistics,
+#' and informative and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' An informative covariate with tunable informativeness was defined with a
+#' rough informativeness parameter, delta, defined between 0 and 100.
+#' Simulations were performed with delta values of 0, 20, 40, 60, 80, and 100.
+#' The conditional probability of a test being null was
+#' defined by a smooth function of the informative covariate.
+#'
+#' In \code{\link{varyinginfo-discrete-benchmark}},
+#' similar settings were considered, but using a discrete, non-smooth, relationship
+#' between the condition probability of a test being null and the informative covariate.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#'
+#' @examples
+#' \dontrun{
+#' `varyinginfo-smooth-benchmark-level00`()
+#' `varyinginfo-smooth-benchmark-level20`()
+#' `varyinginfo-smooth-benchmark-level40`()
+#' `varyinginfo-smooth-benchmark-level60`()
+#' `varyinginfo-smooth-benchmark-level80`()
+#' `varyinginfo-smooth-benchmark-level100`()
+#' 
+#' res <- `varyinginfo-smooth-benchmark-level100`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @seealso \code{\link{varyinginfo-discrete-benchmark}}
+#' @aliases varyinginfo-smooth-benchmark-level00 varyinginfo-smooth-benchmark-level20 varyinginfo-smooth-benchmark-level40 varyinginfo-smooth-benchmark-level60 varyinginfo-smooth-benchmark-level80 varyinginfo-smooth-benchmark-level100
+#' @name varyinginfo-smooth-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (varying number of tests)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019) across varying
+#' number of hypotheses tested, using standard Gaussian distributed test statistics,
+#' and `sine' informative and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' Simulations were performed with 100, 500, 1000, 5000, 10000, and 50000 tests.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#'
+#' @examples
+#' \dontrun{
+#' `varyingntests-benchmark-n100`()
+#' `varyingntests-benchmark-n500`()
+#' `varyingntests-benchmark-n1000`()
+#' `varyingntests-benchmark-n5000`()
+#' `varyingntests-benchmark-n10000`()
+#' `varyingntests-benchmark-n50000`()
+#' 
+#' res <- `varyingntests-benchmark-n100`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#'
+#' @aliases varyingntests-benchmark-n100 varyingntests-benchmark-n500 varyingntests-benchmark-n1000 varyingntests-benchmark-n5000 varyingntests-benchmark-n10000 varyingntests-benchmark-n50000
+#' @name varyingntests-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (varying null proportion, t-distributed)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019) across varying
+#' null proportion of hypotheses with 20000 tests, \eqn{t_{11}} distributed
+#' test statistics, and `sine' informative and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' Simulations were performed with 5\%, 10\%, 20\%, 30\%, 40\%, 50\%, 60\%, 70\%,
+#' 80\%, 90\%, 95\%, and 99\% null tests.
+#' 
+#' In \code{\link{varyingpi0-benchmark}},
+#' similar settings were considered, but standard Gaussian distributed test statistics.
+#'
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#'
+#' @examples
+#' \dontrun{
+#' `varyingpi0-t-benchmark-nullprop05`()
+#' `varyingpi0-t-benchmark-nullprop10`()
+#' `varyingpi0-t-benchmark-nullprop20`()
+#' `varyingpi0-t-benchmark-nullprop30`()
+#' `varyingpi0-t-benchmark-nullprop40`()
+#' `varyingpi0-t-benchmark-nullprop50`()
+#' `varyingpi0-t-benchmark-nullprop60`()
+#' `varyingpi0-t-benchmark-nullprop70`()
+#' `varyingpi0-t-benchmark-nullprop80`()
+#' `varyingpi0-t-benchmark-nullprop90`()
+#' `varyingpi0-t-benchmark-nullprop95`()
+#' `varyingpi0-t-benchmark-nullprop99`()
+#' 
+#' res <- `varyingpi0-t-benchmark-nullprop99`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @seealso \code{\link{varyingpi0-benchmark}}
+#' @aliases varyingpi0-t-benchmark-nullprop05 varyingpi0-t-benchmark-nullprop10 varyingpi0-t-benchmark-nullprop20 varyingpi0-t-benchmark-nullprop30 varyingpi0-t-benchmark-nullprop40 varyingpi0-t-benchmark-nullprop50 varyingpi0-t-benchmark-nullprop60 varyingpi0-t-benchmark-nullprop70 varyingpi0-t-benchmark-nullprop80 varyingpi0-t-benchmark-nullprop90 varyingpi0-t-benchmark-nullprop95 varyingpi0-t-benchmark-nullprop99      
+#' @name varyingpi0-t-benchmark
+#' @docType data
+NULL
+
+
+#' @title Simulation study results (varying null proportion, Gaussian-distributed)
+#'
+#' @description
+#' Results for simulations used in Korthauer and Kimes et al. (2019) across varying
+#' null proportion of hypotheses with 20000 tests, standard Gaussian distributed
+#' test statistics, and `sine' informative and paired uninformative covariates stored
+#' as a list of SummarizedBenchmark objects from 100 replications. 
+#' Simulations were performed with 5\%, 10\%, 20\%, 30\%, 40\%, 50\%, 60\%, 70\%,
+#' 80\%, 90\%, 95\%, and 99\% null tests.
+#'
+#' In \code{\link{varyingpi0-t-benchmark}},
+#' similar settings were considered, but \eqn{t_{11}} distributed test statistics.
+#' 
+#' @details
+#' The object is a list of length 100 corresponding to the 100 replications. Each
+#' entry in the list is a named list of two SummarizedBenchmark objects. The results
+#' based on using an informative and uninformative covariate are stored as
+#' \code{"informative"} and \code{"uninformative"}, respectively.
+#'
+#' @examples
+#' \dontrun{
+#' `varyingpi0-benchmark-nullprop05`()
+#' `varyingpi0-benchmark-nullprop10`()
+#' `varyingpi0-benchmark-nullprop20`()
+#' `varyingpi0-benchmark-nullprop30`()
+#' `varyingpi0-benchmark-nullprop40`()
+#' `varyingpi0-benchmark-nullprop50`()
+#' `varyingpi0-benchmark-nullprop60`()
+#' `varyingpi0-benchmark-nullprop70`()
+#' `varyingpi0-benchmark-nullprop80`()
+#' `varyingpi0-benchmark-nullprop90`()
+#' `varyingpi0-benchmark-nullprop95`()
+#' `varyingpi0-benchmark-nullprop99`()
+#' 
+#' res <- `varyingpi0-benchmark-nullprop99`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' }
+#' 
+#' @seealso \code{\link{varyingpi0-t-benchmark}}
+#' @aliases varyingpi0-benchmark-nullprop05 varyingpi0-benchmark-nullprop10 varyingpi0-benchmark-nullprop20 varyingpi0-benchmark-nullprop30 varyingpi0-benchmark-nullprop40 varyingpi0-benchmark-nullprop50 varyingpi0-benchmark-nullprop60 varyingpi0-benchmark-nullprop70 varyingpi0-benchmark-nullprop80 varyingpi0-benchmark-nullprop90 varyingpi0-benchmark-nullprop95 varyingpi0-benchmark-nullprop99        
+#' @name varyingpi0-benchmark
+#' @docType data
+NULL
