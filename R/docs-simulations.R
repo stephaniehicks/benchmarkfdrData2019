@@ -25,7 +25,7 @@
 #' }
 #' 
 #' @aliases null-benchmark-chisq4 null-benchmark-gaussian null-benchmark-t11 null-benchmark-t5
-#' @name null-benchmark
+#' @name sims-null
 #' @docType data
 NULL
 
@@ -58,7 +58,7 @@ NULL
 #' }
 #' 
 #' @aliases informative-cosine-benchmark-chisq4 informative-cosine-benchmark-gaussian informative-cosine-benchmark-t11 informative-cosine-benchmark-t5
-#' @name informative-cosine-benchmark
+#' @name sims-informative-cosine
 #' @docType data
 NULL
 
@@ -91,7 +91,7 @@ NULL
 #' }
 #' 
 #' @aliases informative-cubic-benchmark-chisq4 informative-cubic-benchmark-gaussian informative-cubic-benchmark-t11 informative-cubic-benchmark-t5
-#' @name informative-cubic-benchmark
+#' @name sims-informative-cubic
 #' @docType data
 NULL
 
@@ -124,7 +124,7 @@ NULL
 #' }
 #' 
 #' @aliases informative-sine-benchmark-chisq4 informative-sine-benchmark-gaussian informative-sine-benchmark-t11 informative-sine-benchmark-t5
-#' @name informative-sine-benchmark
+#' @name sims-informative-sine
 #' @docType data
 NULL
 
@@ -157,7 +157,7 @@ NULL
 #' }
 #' 
 #' @aliases informative-step-benchmark-chisq4 informative-step-benchmark-gaussian informative-step-benchmark-t11 informative-step-benchmark-t5
-#' @name informative-step-benchmark
+#' @name sims-informative-step
 #' @docType data
 NULL
 
@@ -174,7 +174,7 @@ NULL
 #' Simulations were performed with `bimodal', `flat top', `skew' and `spiky'
 #' effect size distributions (see corresponding reference for details).
 #'
-#' In \code{\link{uasettings-t-benchmark}} and \code{\link{uasettings-25-benchmark}},
+#' In \code{\link{sims-uasettings-t}} and \code{\link{sims-uasettings-25}},
 #' similar settings were considered, but with \eqn{t_{11}} distributed test statistics
 #' and 25\% of tests being non-null, respectively.
 #' 
@@ -201,9 +201,9 @@ NULL
 #' res[[1]]$uninformative
 #' }
 #'
-#' @seealso \code{\link{uasettings-t-benchmark}}, \code{\link{uasettings-25-benchmark}}
+#' @seealso \code{\link{sims-uasettings-t}}, \code{\link{sims-uasettings-25}}
 #' @aliases uasettings-benchmark-bimodal uasettings-benchmark-flattop uasettings-benchmark-skew uasettings-benchmark-spiky
-#' @name uasettings-benchmark
+#' @name sims-uasettings
 #' @docType data
 NULL
 
@@ -220,7 +220,7 @@ NULL
 #' Simulations were performed with `bimodal', `flat top', `skew' and `spiky'
 #' effect size distributions (see corresponding reference for details).
 #'
-#' In \code{\link{uasettings-benchmark}} and \code{\link{uasettings-25-benchmark}},
+#' In \code{\link{sims-uasettings}} and \code{\link{sims-uasettings-25}},
 #' similar settings were considered, but with standard Gaussian distributed test statistics
 #' and 25\% of tests being non-null, respectively.
 #' 
@@ -247,9 +247,9 @@ NULL
 #' res[[1]]$uninformative
 #' }
 #' 
-#' @seealso \code{\link{uasettings-benchmark}}, \code{\link{uasettings-25-benchmark}}
+#' @seealso \code{\link{sims-uasettings}}, \code{\link{sims-uasettings-25}}
 #' @aliases uasettings-t-benchmark-bimodal uasettings-t-benchmark-flattop uasettings-t-benchmark-skew uasettings-t-benchmark-spiky
-#' @name uasettings-t-benchmark
+#' @name sims-uasettings-t
 #' @docType data
 NULL
 
@@ -266,7 +266,7 @@ NULL
 #' Simulations were performed with `bimodal', `flat top', `skew' and `spiky'
 #' effect size distributions (see corresponding reference for details).
 #'
-#' In \code{\link{uasettings-benchmark}},
+#' In \code{\link{sims-uasettings}},
 #' similar settings were considered, but with 10\% of tests being non-null.
 #' 
 #' @details
@@ -292,9 +292,9 @@ NULL
 #' res[[1]]$uninformative
 #' }
 #'
-#' @seealso \code{\link{uasettings-benchmark}}
+#' @seealso \code{\link{sims-uasettings}}
 #' @aliases uasettings-25-benchmark-bimodal uasettings-25-benchmark-flattop uasettings-25-benchmark-skew uasettings-25-benchmark-spiky
-#' @name uasettings-25-benchmark
+#' @name sims-uasettings-25
 #' @docType data
 NULL
 
@@ -312,7 +312,7 @@ NULL
 #' The conditional probability of a test being null was
 #' defined by a discrete, non-smooth, function of the informative covariate.
 #'
-#' In \code{\link{varyinginfo-smooth-benchmark}},
+#' In \code{\link{sims-varyinginfo-smooth}},
 #' similar settings were considered, but using a smooth relationship between the
 #' condition probability of a test being null and the informative covariate.
 #'  
@@ -336,9 +336,9 @@ NULL
 #' res[[1]]$uninformative
 #' }
 #' 
-#' @seealso \code{\link{varyinginfo-smooth-benchmark}}
+#' @seealso \code{\link{sims-varyinginfo-smooth}}
 #' @aliases varyinginfo-discrete-benchmark-level00 varyinginfo-discrete-benchmark-level20 varyinginfo-discrete-benchmark-level40 varyinginfo-discrete-benchmark-level60 varyinginfo-discrete-benchmark-level80 varyinginfo-discrete-benchmark-level100
-#' @name varyinginfo-discrete-benchmark
+#' @name sims-varyinginfo-discrete
 #' @docType data
 NULL
 
@@ -356,7 +356,7 @@ NULL
 #' The conditional probability of a test being null was
 #' defined by a smooth function of the informative covariate.
 #'
-#' In \code{\link{varyinginfo-discrete-benchmark}},
+#' In \code{\link{sims-varyinginfo-discrete}},
 #' similar settings were considered, but using a discrete, non-smooth, relationship
 #' between the condition probability of a test being null and the informative covariate.
 #' 
@@ -380,9 +380,9 @@ NULL
 #' res[[1]]$uninformative
 #' }
 #' 
-#' @seealso \code{\link{varyinginfo-discrete-benchmark}}
+#' @seealso \code{\link{sims-varyinginfo-discrete}}
 #' @aliases varyinginfo-smooth-benchmark-level00 varyinginfo-smooth-benchmark-level20 varyinginfo-smooth-benchmark-level40 varyinginfo-smooth-benchmark-level60 varyinginfo-smooth-benchmark-level80 varyinginfo-smooth-benchmark-level100
-#' @name varyinginfo-smooth-benchmark
+#' @name sims-varyinginfo-smooth
 #' @docType data
 NULL
 
@@ -417,7 +417,7 @@ NULL
 #' }
 #'
 #' @aliases varyingntests-benchmark-n100 varyingntests-benchmark-n500 varyingntests-benchmark-n1000 varyingntests-benchmark-n5000 varyingntests-benchmark-n10000 varyingntests-benchmark-n50000
-#' @name varyingntests-benchmark
+#' @name sims-varyingntests
 #' @docType data
 NULL
 
@@ -432,7 +432,7 @@ NULL
 #' Simulations were performed with 5\%, 10\%, 20\%, 30\%, 40\%, 50\%, 60\%, 70\%,
 #' 80\%, 90\%, 95\%, and 99\% null tests.
 #' 
-#' In \code{\link{varyingpi0-benchmark}},
+#' In \code{\link{sims-varyingpi0}},
 #' similar settings were considered, but standard Gaussian distributed test statistics.
 #'
 #' @details
@@ -461,9 +461,9 @@ NULL
 #' res[[1]]$uninformative
 #' }
 #' 
-#' @seealso \code{\link{varyingpi0-benchmark}}
+#' @seealso \code{\link{sims-varyingpi0}}
 #' @aliases varyingpi0-t-benchmark-nullprop05 varyingpi0-t-benchmark-nullprop10 varyingpi0-t-benchmark-nullprop20 varyingpi0-t-benchmark-nullprop30 varyingpi0-t-benchmark-nullprop40 varyingpi0-t-benchmark-nullprop50 varyingpi0-t-benchmark-nullprop60 varyingpi0-t-benchmark-nullprop70 varyingpi0-t-benchmark-nullprop80 varyingpi0-t-benchmark-nullprop90 varyingpi0-t-benchmark-nullprop95 varyingpi0-t-benchmark-nullprop99      
-#' @name varyingpi0-t-benchmark
+#' @name sims-varyingpi0-t
 #' @docType data
 NULL
 
@@ -478,7 +478,7 @@ NULL
 #' Simulations were performed with 5\%, 10\%, 20\%, 30\%, 40\%, 50\%, 60\%, 70\%,
 #' 80\%, 90\%, 95\%, and 99\% null tests.
 #'
-#' In \code{\link{varyingpi0-t-benchmark}},
+#' In \code{\link{sims-varyingpi0-t}},
 #' similar settings were considered, but \eqn{t_{11}} distributed test statistics.
 #' 
 #' @details
@@ -507,8 +507,8 @@ NULL
 #' res[[1]]$uninformative
 #' }
 #' 
-#' @seealso \code{\link{varyingpi0-t-benchmark}}
+#' @seealso \code{\link{sims-sims-varyingpi0-t}}
 #' @aliases varyingpi0-benchmark-nullprop05 varyingpi0-benchmark-nullprop10 varyingpi0-benchmark-nullprop20 varyingpi0-benchmark-nullprop30 varyingpi0-benchmark-nullprop40 varyingpi0-benchmark-nullprop50 varyingpi0-benchmark-nullprop60 varyingpi0-benchmark-nullprop70 varyingpi0-benchmark-nullprop80 varyingpi0-benchmark-nullprop90 varyingpi0-benchmark-nullprop95 varyingpi0-benchmark-nullprop99        
-#' @name varyingpi0-benchmark
+#' @name sims-varyingpi0
 #' @docType data
 NULL
