@@ -25,3 +25,7 @@ Changes in version 0.99.6 (2019-04-24)
 
 Changes in version 0.99.7 (2019-04-24)
 + Changed NEWS message for 0.99.6 to prevent BiocCheck warning
+
+Changes in version 0.99.8 (2019-05-04)
++ Added documentation for all data objects with roxygen2 code in R files
+
