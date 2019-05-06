@@ -18,6 +18,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `mouse-benchmark`()
+
 \dontrun{
 `mouse-benchmark`()
 `mouse-uninf-benchmark`()

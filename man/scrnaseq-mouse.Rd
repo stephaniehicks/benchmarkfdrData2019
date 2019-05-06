@@ -35,6 +35,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `mouse-benchmark-mast-det`()
+
 \dontrun{
 `mouse-benchmark-mast-det`()
 `mouse-benchmark-mast-mean`()

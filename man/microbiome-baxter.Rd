@@ -29,6 +29,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `baxter-genus-benchmark`()
+
 \dontrun{
 `baxter-genus-benchmark`()
 `baxter-genus-log-ubiquity-benchmark`()

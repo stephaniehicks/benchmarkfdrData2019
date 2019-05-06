@@ -32,6 +32,10 @@ based on using an informative and uninformative covariate are stored as
 \code{"informative"} and \code{"uninformative"}, respectively.
 }
 \examples{
+res <- `varyinginfo-smooth-benchmark-level100`()
+res[[1]]$informative
+res[[1]]$uninformative
+
 \dontrun{
 `varyinginfo-smooth-benchmark-level00`()
 `varyinginfo-smooth-benchmark-level20`()
@@ -39,10 +43,6 @@ based on using an informative and uninformative covariate are stored as
 `varyinginfo-smooth-benchmark-level60`()
 `varyinginfo-smooth-benchmark-level80`()
 `varyinginfo-smooth-benchmark-level100`()
-
-res <- `varyinginfo-smooth-benchmark-level100`()
-res[[1]]$informative
-res[[1]]$uninformative
 }
 
 }

@@ -25,6 +25,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `goodrich-genus-benchmark`()
+
 \dontrun{
 `goodrich-genus-benchmark`()
 `goodrich-genus-abun-benchmark`()

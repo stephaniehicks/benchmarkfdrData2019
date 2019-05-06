@@ -16,6 +16,8 @@
 #' }
 #' 
 #' @examples
+#' res <- `h3k4me3-promoters-benchmark`()
+#'
 #' \dontrun{
 #' `h3k4me3-promoters-benchmark`()
 #' `h3k4me3-csaw-benchmark`()
@@ -46,6 +48,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `cbp-csaw-benchmark`()
+#'
 #' \dontrun{
 #' `cbp-csaw-benchmark`()
 #' `cbp-csaw-uninf-benchmark`()
@@ -73,6 +77,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `mouse-benchmark`()
+#'
 #' \dontrun{
 #' `mouse-benchmark`()
 #' `mouse-uninf-benchmark`()
@@ -99,6 +105,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `human-benchmark`()
+#'
 #' \dontrun{
 #' `human-benchmark`()
 #' `human-uninf-benchmark`()
@@ -127,6 +135,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `bmi-maf-benchmark`()
+#'
 #' \dontrun{
 #' `bmi-maf-benchmark`()
 #' `bmi-uninf-benchmark`()
@@ -165,6 +175,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `baxter-genus-benchmark`()
+#'
 #' \dontrun{
 #' `baxter-genus-benchmark`()
 #' `baxter-genus-log-ubiquity-benchmark`()
@@ -205,6 +217,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `enigma-al-otus-benchmark`()
+#'
 #' \dontrun{
 #' `enigma-al-otus-benchmark`()
 #' `enigma-al-otus-abun-benchmark`()
@@ -248,6 +262,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `goodrich-genus-benchmark`()
+#'
 #' \dontrun{
 #' `goodrich-genus-benchmark`()
 #' `goodrich-genus-abun-benchmark`()
@@ -287,6 +303,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `papa-genus-benchmark`()
+#'
 #' \dontrun{
 #' `papa-genus-benchmark`()
 #' `papa-genus-abun-benchmark`()
@@ -326,6 +344,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `schubert-otus-benchmark`()
+#'
 #' \dontrun{
 #' `schubert-otus-benchmark`()
 #' `schubert-otus-abun-benchmark`()
@@ -355,6 +375,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `brain-benchmark`()
+#'
 #' \dontrun{
 #' `brain-benchmark`()
 #' `brain-uninf-benchmark`()
@@ -383,6 +405,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `mir200c-benchmark`()
+#'
 #' \dontrun{
 #' `mir200c-benchmark`()
 #' `mir200c-uninf-benchmark`()
@@ -418,6 +442,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `polyester-results-de5`()
+#'
 #' \dontrun{
 #' `polyester-results-de5`()
 #' `polyester-results-de5-uninfCov`()
@@ -482,6 +508,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `yeast-results-de5`()
+#'
 #' \dontrun{
 #' `yeast-results-de5`()
 #' `yeast-results-de5-uninfCov`()
@@ -523,17 +551,6 @@ NULL
 NULL
 
 
-
-
-
-
-
-
-
-
-
-
-
 #' @title scRNA-seq, human dataset results
 #' 
 #' @description
@@ -558,6 +575,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `human-benchmark-mast-det`()
+#'
 #' \dontrun{
 #' `human-benchmark-mast-det`()
 #' `human-benchmark-mast-mean`()
@@ -601,6 +620,8 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `mouse-benchmark-mast-det`()
+#'
 #' \dontrun{
 #' `mouse-benchmark-mast-det`()
 #' `mouse-benchmark-mast-mean`()

@@ -24,6 +24,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `h3k4me3-promoters-benchmark`()
+
 \dontrun{
 `h3k4me3-promoters-benchmark`()
 `h3k4me3-csaw-benchmark`()

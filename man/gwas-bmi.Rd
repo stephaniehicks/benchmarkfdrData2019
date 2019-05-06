@@ -21,6 +21,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `bmi-maf-benchmark`()
+
 \dontrun{
 `bmi-maf-benchmark`()
 `bmi-uninf-benchmark`()

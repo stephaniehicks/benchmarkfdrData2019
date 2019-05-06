@@ -18,6 +18,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `human-benchmark`()
+
 \dontrun{
 `human-benchmark`()
 `human-uninf-benchmark`()

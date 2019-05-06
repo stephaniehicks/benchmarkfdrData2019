@@ -27,6 +27,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `papa-genus-benchmark`()
+
 \dontrun{
 `papa-genus-benchmark`()
 `papa-genus-abun-benchmark`()

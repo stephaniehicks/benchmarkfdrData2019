@@ -29,3 +29,7 @@ Changes in version 0.99.7 (2019-04-24)
 Changes in version 0.99.8 (2019-05-04)
 + Added documentation for all data objects with roxygen2 code in R files
 
+Changes in version 0.99.9 (2019-05-06)
++ Added running examples to all docs
++ Fixed typo in one doc reference
+

@@ -35,6 +35,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `human-benchmark-mast-det`()
+
 \dontrun{
 `human-benchmark-mast-det`()
 `human-benchmark-mast-mean`()

@@ -20,6 +20,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `brain-benchmark`()
+
 \dontrun{
 `brain-benchmark`()
 `brain-uninf-benchmark`()

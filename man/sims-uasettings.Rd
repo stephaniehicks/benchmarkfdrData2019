@@ -29,15 +29,15 @@ based on using an informative and uninformative covariate are stored as
 \code{"informative"} and \code{"uninformative"}, respectively.
 }
 \examples{
+res <- `uasettings-benchmark-spiky`()
+res[[1]]$informative
+res[[1]]$uninformative
+
 \dontrun{
 `uasettings-benchmark-bimodal`()
 `uasettings-benchmark-flattop`()
 `uasettings-benchmark-skew`()
 `uasettings-benchmark-spiky`()
-
-res <- `uasettings-benchmark-spiky`()
-res[[1]]$informative
-res[[1]]$uninformative
 }
 
 }

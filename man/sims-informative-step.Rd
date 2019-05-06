@@ -22,15 +22,15 @@ based on using an informative and uninformative covariate are stored as
 \code{"informative"} and \code{"uninformative"}, respectively.
 }
 \examples{
+res <- `informative-step-benchmark-gaussian`()
+res[[1]]$informative
+res[[1]]$uninformative
+
 \dontrun{
 `informative-step-benchmark-gaussian`()
 `informative-step-benchmark-t11`()
 `informative-step-benchmark-t5`()
 `informative-step-benchmark-chisq4`()
-
-res <- `informative-step-benchmark-chisq4`()
-res[[1]]$informative
-res[[1]]$uninformative
 }
 
 }

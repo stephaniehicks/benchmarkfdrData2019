@@ -21,6 +21,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `cbp-csaw-benchmark`()
+
 \dontrun{
 `cbp-csaw-benchmark`()
 `cbp-csaw-uninf-benchmark`()

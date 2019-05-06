@@ -13,15 +13,15 @@
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #' 
 #' @examples
+#' res <- `null-benchmark-gaussian`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `null-benchmark-gaussian`()
 #' `null-benchmark-t11`()
 #' `null-benchmark-t5`()
 #' `null-benchmark-chisq4`()
-#'
-#' res <- `null-benchmark-chisq4`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #' 
 #' @aliases null-benchmark-chisq4 null-benchmark-gaussian null-benchmark-t11 null-benchmark-t5
@@ -46,17 +46,17 @@ NULL
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #' 
 #' @examples
+#' res <- `informative-cosine-benchmark-chisq4`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#' 
 #' \dontrun{
 #' `informative-cosine-benchmark-gaussian`()
 #' `informative-cosine-benchmark-t11`()
 #' `informative-cosine-benchmark-t5`()
 #' `informative-cosine-benchmark-chisq4`()
-#'
-#' res <- `informative-cosine-benchmark-chisq4`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
-#' 
+#'
 #' @aliases informative-cosine-benchmark-chisq4 informative-cosine-benchmark-gaussian informative-cosine-benchmark-t11 informative-cosine-benchmark-t5
 #' @name sims-informative-cosine
 #' @docType data
@@ -79,15 +79,15 @@ NULL
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #' 
 #' @examples
+#' res <- `informative-cubic-benchmark-gaussian`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `informative-cubic-benchmark-gaussian`()
 #' `informative-cubic-benchmark-t11`()
 #' `informative-cubic-benchmark-t5`()
 #' `informative-cubic-benchmark-chisq4`()
-#'
-#' res <- `informative-cubic-benchmark-chisq4`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #' 
 #' @aliases informative-cubic-benchmark-chisq4 informative-cubic-benchmark-gaussian informative-cubic-benchmark-t11 informative-cubic-benchmark-t5
@@ -112,15 +112,15 @@ NULL
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #' 
 #' @examples
+#' res <- `informative-sine-benchmark-gaussian`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `informative-sine-benchmark-gaussian`()
 #' `informative-sine-benchmark-t11`()
 #' `informative-sine-benchmark-t5`()
 #' `informative-sine-benchmark-chisq4`()
-#'
-#' res <- `informative-sine-benchmark-chisq4`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #' 
 #' @aliases informative-sine-benchmark-chisq4 informative-sine-benchmark-gaussian informative-sine-benchmark-t11 informative-sine-benchmark-t5
@@ -145,15 +145,15 @@ NULL
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #' 
 #' @examples
+#' res <- `informative-step-benchmark-gaussian`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `informative-step-benchmark-gaussian`()
 #' `informative-step-benchmark-t11`()
 #' `informative-step-benchmark-t5`()
 #' `informative-step-benchmark-chisq4`()
-#'
-#' res <- `informative-step-benchmark-chisq4`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #' 
 #' @aliases informative-step-benchmark-chisq4 informative-step-benchmark-gaussian informative-step-benchmark-t11 informative-step-benchmark-t5
@@ -190,15 +190,15 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `uasettings-benchmark-spiky`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `uasettings-benchmark-bimodal`()
 #' `uasettings-benchmark-flattop`()
 #' `uasettings-benchmark-skew`()
 #' `uasettings-benchmark-spiky`()
-#'
-#' res <- `uasettings-benchmark-spiky`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #'
 #' @seealso \code{\link{sims-uasettings-t}}, \code{\link{sims-uasettings-25}}
@@ -236,15 +236,15 @@ NULL
 #' }
 #' 
 #' @examples
+#' res <- `uasettings-t-benchmark-spiky`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `uasettings-t-benchmark-bimodal`()
 #' `uasettings-t-benchmark-flattop`()
 #' `uasettings-t-benchmark-skew`()
 #' `uasettings-t-benchmark-spiky`()
-#' 
-#' res <- `uasettings-t-benchmark-spiky`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #' 
 #' @seealso \code{\link{sims-uasettings}}, \code{\link{sims-uasettings-25}}
@@ -281,15 +281,15 @@ NULL
 #' }
 #'
 #' @examples
+#' res <- `uasettings-25-benchmark-spiky`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `uasettings-25-benchmark-bimodal`()
 #' `uasettings-25-benchmark-flattop`()
 #' `uasettings-25-benchmark-skew`()
 #' `uasettings-25-benchmark-spiky`()
-#' 
-#' res <- `uasettings-25-benchmark-spiky`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #'
 #' @seealso \code{\link{sims-uasettings}}
@@ -323,6 +323,10 @@ NULL
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #'
 #' @examples
+#' res <- `varyinginfo-discrete-benchmark-level100`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `varyinginfo-discrete-benchmark-level00`()
 #' `varyinginfo-discrete-benchmark-level20`()
@@ -330,10 +334,6 @@ NULL
 #' `varyinginfo-discrete-benchmark-level60`()
 #' `varyinginfo-discrete-benchmark-level80`()
 #' `varyinginfo-discrete-benchmark-level100`()
-#'
-#' res <- `varyinginfo-discrete-benchmark-level100`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #' 
 #' @seealso \code{\link{sims-varyinginfo-smooth}}
@@ -367,6 +367,10 @@ NULL
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #'
 #' @examples
+#' res <- `varyinginfo-smooth-benchmark-level100`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `varyinginfo-smooth-benchmark-level00`()
 #' `varyinginfo-smooth-benchmark-level20`()
@@ -374,10 +378,6 @@ NULL
 #' `varyinginfo-smooth-benchmark-level60`()
 #' `varyinginfo-smooth-benchmark-level80`()
 #' `varyinginfo-smooth-benchmark-level100`()
-#' 
-#' res <- `varyinginfo-smooth-benchmark-level100`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #' 
 #' @seealso \code{\link{sims-varyinginfo-discrete}}
@@ -403,6 +403,10 @@ NULL
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #'
 #' @examples
+#' res <- `varyingntests-benchmark-n100`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `varyingntests-benchmark-n100`()
 #' `varyingntests-benchmark-n500`()
@@ -410,10 +414,6 @@ NULL
 #' `varyingntests-benchmark-n5000`()
 #' `varyingntests-benchmark-n10000`()
 #' `varyingntests-benchmark-n50000`()
-#' 
-#' res <- `varyingntests-benchmark-n100`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #'
 #' @aliases varyingntests-benchmark-n100 varyingntests-benchmark-n500 varyingntests-benchmark-n1000 varyingntests-benchmark-n5000 varyingntests-benchmark-n10000 varyingntests-benchmark-n50000
@@ -442,6 +442,10 @@ NULL
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #'
 #' @examples
+#' res <- `varyingpi0-t-benchmark-nullprop99`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `varyingpi0-t-benchmark-nullprop05`()
 #' `varyingpi0-t-benchmark-nullprop10`()
@@ -455,10 +459,6 @@ NULL
 #' `varyingpi0-t-benchmark-nullprop90`()
 #' `varyingpi0-t-benchmark-nullprop95`()
 #' `varyingpi0-t-benchmark-nullprop99`()
-#' 
-#' res <- `varyingpi0-t-benchmark-nullprop99`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #' 
 #' @seealso \code{\link{sims-varyingpi0}}
@@ -488,6 +488,10 @@ NULL
 #' \code{"informative"} and \code{"uninformative"}, respectively.
 #'
 #' @examples
+#' res <- `varyingpi0-benchmark-nullprop99`()
+#' res[[1]]$informative
+#' res[[1]]$uninformative
+#'
 #' \dontrun{
 #' `varyingpi0-benchmark-nullprop05`()
 #' `varyingpi0-benchmark-nullprop10`()
@@ -501,13 +505,9 @@ NULL
 #' `varyingpi0-benchmark-nullprop90`()
 #' `varyingpi0-benchmark-nullprop95`()
 #' `varyingpi0-benchmark-nullprop99`()
-#' 
-#' res <- `varyingpi0-benchmark-nullprop99`()
-#' res[[1]]$informative
-#' res[[1]]$uninformative
 #' }
 #' 
-#' @seealso \code{\link{sims-sims-varyingpi0-t}}
+#' @seealso \code{\link{sims-varyingpi0-t}}
 #' @aliases varyingpi0-benchmark-nullprop05 varyingpi0-benchmark-nullprop10 varyingpi0-benchmark-nullprop20 varyingpi0-benchmark-nullprop30 varyingpi0-benchmark-nullprop40 varyingpi0-benchmark-nullprop50 varyingpi0-benchmark-nullprop60 varyingpi0-benchmark-nullprop70 varyingpi0-benchmark-nullprop80 varyingpi0-benchmark-nullprop90 varyingpi0-benchmark-nullprop95 varyingpi0-benchmark-nullprop99        
 #' @name sims-varyingpi0
 #' @docType data

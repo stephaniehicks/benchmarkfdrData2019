@@ -24,6 +24,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `schubert-otus-benchmark`()
+
 \dontrun{
 `schubert-otus-benchmark`()
 `schubert-otus-abun-benchmark`()

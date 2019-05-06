@@ -20,6 +20,8 @@ Results for this case study include:
 }
 }
 \examples{
+res <- `mir200c-benchmark`()
+
 \dontrun{
 `mir200c-benchmark`()
 `mir200c-uninf-benchmark`()
