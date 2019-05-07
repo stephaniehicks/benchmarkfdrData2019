@@ -560,7 +560,7 @@ NULL
 #' res[[1]]$uninformative
 #' }
 #' 
-#' @seealso \code{\link{sims-sims-varyingpi0-t}}
+#' @seealso \code{\link{sims-varyingpi0-t}}
 #' @aliases varyingpi0-benchmark-nullprop05 varyingpi0-benchmark-nullprop10 varyingpi0-benchmark-nullprop20 varyingpi0-benchmark-nullprop30 varyingpi0-benchmark-nullprop40 varyingpi0-benchmark-nullprop50 varyingpi0-benchmark-nullprop60 varyingpi0-benchmark-nullprop70 varyingpi0-benchmark-nullprop80 varyingpi0-benchmark-nullprop90 varyingpi0-benchmark-nullprop95 varyingpi0-benchmark-nullprop99        
 #' @name sims-varyingpi0
 #' @docType data

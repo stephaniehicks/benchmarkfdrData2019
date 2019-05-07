@@ -57,5 +57,5 @@ res[[1]]$uninformative
 
 }
 \seealso{
-\code{\link{sims-sims-varyingpi0-t}}
+\code{\link{sims-varyingpi0-t}}
 }
