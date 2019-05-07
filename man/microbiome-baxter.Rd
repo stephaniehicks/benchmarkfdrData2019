@@ -29,7 +29,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `baxter-genus-benchmark`()
+`baxter-genus-benchmark`(metadata = TRUE)
 
 \dontrun{
 `baxter-genus-benchmark`()

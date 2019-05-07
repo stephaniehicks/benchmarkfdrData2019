@@ -35,7 +35,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `enigma-al-otus-benchmark`()
+`enigma-al-otus-benchmark`(metadata = TRUE)
 
 \dontrun{
 `enigma-al-otus-benchmark`()

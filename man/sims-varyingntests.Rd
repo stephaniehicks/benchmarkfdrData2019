@@ -24,9 +24,7 @@ based on using an informative and uninformative covariate are stored as
 \code{"informative"} and \code{"uninformative"}, respectively.
 }
 \examples{
-res <- `varyingntests-benchmark-n100`()
-res[[1]]$informative
-res[[1]]$uninformative
+`varyingntests-benchmark-n100`(metadata = TRUE)
 
 \dontrun{
 `varyingntests-benchmark-n100`()
@@ -35,6 +33,10 @@ res[[1]]$uninformative
 `varyingntests-benchmark-n5000`()
 `varyingntests-benchmark-n10000`()
 `varyingntests-benchmark-n50000`()
+
+res <- `varyingntests-benchmark-n100`()
+res[[1]]$informative
+res[[1]]$uninformative
 }
 
 }

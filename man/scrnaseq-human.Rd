@@ -35,7 +35,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `human-benchmark-mast-det`()
+`human-benchmark-mast-det`(metadata = TRUE)
 
 \dontrun{
 `human-benchmark-mast-det`()

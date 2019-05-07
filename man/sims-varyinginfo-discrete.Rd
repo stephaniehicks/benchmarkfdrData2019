@@ -32,9 +32,7 @@ based on using an informative and uninformative covariate are stored as
 \code{"informative"} and \code{"uninformative"}, respectively.
 }
 \examples{
-res <- `varyinginfo-discrete-benchmark-level100`()
-res[[1]]$informative
-res[[1]]$uninformative
+`varyinginfo-discrete-benchmark-level00`(metadata = TRUE)
 
 \dontrun{
 `varyinginfo-discrete-benchmark-level00`()
@@ -43,6 +41,10 @@ res[[1]]$uninformative
 `varyinginfo-discrete-benchmark-level60`()
 `varyinginfo-discrete-benchmark-level80`()
 `varyinginfo-discrete-benchmark-level100`()
+
+res <- `varyinginfo-discrete-benchmark-level100`()
+res[[1]]$informative
+res[[1]]$uninformative
 }
 
 }

@@ -18,7 +18,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `human-benchmark`()
+`human-benchmark`(metadata = TRUE)
 
 \dontrun{
 `human-benchmark`()

@@ -20,7 +20,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `mir200c-benchmark`()
+`mir200c-benchmark`(metadata = TRUE)
 
 \dontrun{
 `mir200c-benchmark`()

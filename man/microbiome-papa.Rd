@@ -27,7 +27,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `papa-genus-benchmark`()
+`papa-genus-benchmark`(metadata = TRUE)
 
 \dontrun{
 `papa-genus-benchmark`()

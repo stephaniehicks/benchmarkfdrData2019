@@ -33,7 +33,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `polyester-results-de5`()
+`polyester-results-de5`(metadata = TRUE)
 
 \dontrun{
 `polyester-results-de5`()

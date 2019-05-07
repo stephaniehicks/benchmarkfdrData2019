@@ -25,7 +25,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `goodrich-genus-benchmark`()
+`goodrich-genus-benchmark`(metadata = TRUE)
 
 \dontrun{
 `goodrich-genus-benchmark`()

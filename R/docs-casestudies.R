@@ -6,6 +6,8 @@
 #' Analyses were performed using either \code{DESeq2}
 #' applied to predefined regions or with the \code{csaw} package.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -16,7 +18,7 @@
 #' }
 #' 
 #' @examples
-#' res <- `h3k4me3-promoters-benchmark`()
+#' `h3k4me3-promoters-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `h3k4me3-promoters-benchmark`()
@@ -39,6 +41,8 @@ NULL
 #' knockout and wild-type mice described in Korthauer and Kimes et al. (2019).
 #' Analyses were performed using the \code{csaw} package. 
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -48,7 +52,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `cbp-csaw-benchmark`()
+#' `cbp-csaw-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `cbp-csaw-benchmark`()
@@ -69,6 +73,8 @@ NULL
 #' Results for case study on gene set analysis using mouse dataset described in
 #' Korthauer and Kimes et al. (2019). Analyses were performed using GSEA.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -77,7 +83,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `mouse-benchmark`()
+#' `mouse-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `mouse-benchmark`()
@@ -97,6 +103,8 @@ NULL
 #' Results for case study on gene set analysis using human dataset described in
 #' Korthauer and Kimes et al. (2019). Analyses were performed using GSEA.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -105,7 +113,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `human-benchmark`()
+#' `human-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `human-benchmark`()
@@ -126,6 +134,8 @@ NULL
 #' from the GIANT Consortium 
 #' described in Korthauer and Kimes et al. (2019).
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -135,7 +145,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `bmi-maf-benchmark`()
+#' `bmi-maf-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `bmi-maf-benchmark`()
@@ -158,6 +168,8 @@ NULL
 #' for differential abundance between samples from patients
 #' with colorectal cancer and patients with no colonic lesions.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -175,7 +187,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `baxter-genus-benchmark`()
+#' `baxter-genus-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `baxter-genus-benchmark`()
@@ -202,6 +214,8 @@ NULL
 #' for correlation between OTU-level microbial abundances and various geochemical
 #' and physical measurements.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -217,7 +231,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `enigma-al-otus-benchmark`()
+#' `enigma-al-otus-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `enigma-al-otus-benchmark`()
@@ -247,6 +261,8 @@ NULL
 #' for differential abundance between samples from lean (body mass index, BMI < 25)
 #' and obsese (BMI > 30) individuals.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -262,7 +278,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `goodrich-genus-benchmark`()
+#' `goodrich-genus-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `goodrich-genus-benchmark`()
@@ -287,6 +303,8 @@ NULL
 #' for differential abundance between samples from patients
 #' with GI symptoms but not IBD, and IBD patients.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -303,7 +321,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `papa-genus-benchmark`()
+#' `papa-genus-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `papa-genus-benchmark`()
@@ -330,6 +348,8 @@ NULL
 #' and patients with diarrheal stool samples (including both C. difficile infection,
 #' CDI, and non-CDI samples).
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -344,7 +364,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `schubert-otus-benchmark`()
+#' `schubert-otus-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `schubert-otus-benchmark`()
@@ -367,6 +387,8 @@ NULL
 #' the GTEx project described in Korthauer and Kimes et al. (2019).
 #' Differential expression was tested using \pkg{DESeq2}.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -375,7 +397,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `brain-benchmark`()
+#' `brain-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `brain-benchmark`()
@@ -397,6 +419,8 @@ NULL
 #' Korthauer and Kimes et al. (2019).
 #' Differential expression was tested using \pkg{DESeq2}.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -405,7 +429,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `mir200c-benchmark`()
+#' `mir200c-benchmark`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `mir200c-benchmark`()
@@ -428,6 +452,8 @@ NULL
 #' described in Korthauer and Kimes et al. (2019).
 #' Differential expression was tested using \pkg{DESeq2}.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -442,7 +468,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `polyester-results-de5`()
+#' `polyester-results-de5`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `polyester-results-de5`()
@@ -476,6 +502,8 @@ NULL
 #' described in Korthauer and Kimes et al. (2019).
 #' Differential expression was tested using \pkg{DESeq2}.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -508,7 +536,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `yeast-results-de5`()
+#' `yeast-results-de5`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `yeast-results-de5`()
@@ -560,6 +588,8 @@ NULL
 #' Differential expression was testing using either the \pkg{MAST} package,
 #' \pkg{scDD} package, or Wilcoxon rank-sum test.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -575,7 +605,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `human-benchmark-mast-det`()
+#' `human-benchmark-mast-det`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `human-benchmark-mast-det`()
@@ -605,6 +635,8 @@ NULL
 #' Differential expression was testing using either the \pkg{MAST} package,
 #' \pkg{scDD} package, or Wilcoxon rank-sum test.
 #' 
+#' @inheritParams sims-null
+#' 
 #' @details
 #' Results for this case study include:
 #' \itemize{
@@ -620,7 +652,7 @@ NULL
 #' }
 #' 
 #' @examples
-#' res <- `mouse-benchmark-mast-det`()
+#' `mouse-benchmark-mast-det`(metadata = TRUE)
 #'
 #' \dontrun{
 #' `mouse-benchmark-mast-det`()

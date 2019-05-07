@@ -8,6 +8,10 @@
 \alias{null-benchmark-t11}
 \alias{null-benchmark-t5}
 \title{Simulation study results (null settings)}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for null simulations used in Korthauer and Kimes et al. (2019) stored
 as a list of SummarizedBenchmark objects from 100 replications. 
@@ -21,15 +25,17 @@ based on using an informative and uninformative covariate are stored as
 \code{"informative"} and \code{"uninformative"}, respectively.
 }
 \examples{
-res <- `null-benchmark-gaussian`()
-res[[1]]$informative
-res[[1]]$uninformative
+`null-benchmark-gaussian`(metadata = TRUE)
 
 \dontrun{
 `null-benchmark-gaussian`()
 `null-benchmark-t11`()
 `null-benchmark-t5`()
 `null-benchmark-chisq4`()
+
+res <- `null-benchmark-chisq4`()
+res[[1]]$informative
+res[[1]]$uninformative
 }
 
 }

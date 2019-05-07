@@ -20,7 +20,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `brain-benchmark`()
+`brain-benchmark`(metadata = TRUE)
 
 \dontrun{
 `brain-benchmark`()

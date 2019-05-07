@@ -21,7 +21,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `cbp-csaw-benchmark`()
+`cbp-csaw-benchmark`(metadata = TRUE)
 
 \dontrun{
 `cbp-csaw-benchmark`()

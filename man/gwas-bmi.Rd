@@ -21,7 +21,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `bmi-maf-benchmark`()
+`bmi-maf-benchmark`(metadata = TRUE)
 
 \dontrun{
 `bmi-maf-benchmark`()

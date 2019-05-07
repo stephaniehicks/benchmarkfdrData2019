@@ -24,7 +24,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `schubert-otus-benchmark`()
+`schubert-otus-benchmark`(metadata = TRUE)
 
 \dontrun{
 `schubert-otus-benchmark`()

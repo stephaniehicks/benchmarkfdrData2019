@@ -34,9 +34,7 @@ based on using an informative and uninformative covariate are stored as
 \code{"informative"} and \code{"uninformative"}, respectively.
 }
 \examples{
-res <- `varyingpi0-benchmark-nullprop99`()
-res[[1]]$informative
-res[[1]]$uninformative
+`varyingpi0-benchmark-nullprop05`(metadata = TRUE)
 
 \dontrun{
 `varyingpi0-benchmark-nullprop05`()
@@ -51,9 +49,13 @@ res[[1]]$uninformative
 `varyingpi0-benchmark-nullprop90`()
 `varyingpi0-benchmark-nullprop95`()
 `varyingpi0-benchmark-nullprop99`()
+
+res <- `varyingpi0-benchmark-nullprop99`()
+res[[1]]$informative
+res[[1]]$uninformative
 }
 
 }
 \seealso{
-\code{\link{sims-varyingpi0-t}}
+\code{\link{sims-sims-varyingpi0-t}}
 }

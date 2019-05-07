@@ -18,7 +18,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `mouse-benchmark`()
+`mouse-benchmark`(metadata = TRUE)
 
 \dontrun{
 `mouse-benchmark`()

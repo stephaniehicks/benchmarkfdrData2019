@@ -69,7 +69,7 @@ Results for this case study include:
 }
 }
 \examples{
-res <- `yeast-results-de5`()
+`yeast-results-de5`(metadata = TRUE)
 
 \dontrun{
 `yeast-results-de5`()
