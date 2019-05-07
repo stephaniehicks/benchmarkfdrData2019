@@ -7,6 +7,10 @@
 \alias{bmi-uninf-benchmark}
 \alias{bmi-samplesize-benchmark}
 \title{Genome-wide Association Study, BMI dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on genome-wide associate study meta-analysis using a BMI dataset
 from the GIANT Consortium 

@@ -10,6 +10,10 @@
 \alias{baxter-otus-benchmark}
 \alias{baxter-otus-log-ubiquity-benchmark}
 \title{Microbiome, Baxter dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on 16S microbiome differential testing of
 Baxter et al. (2016) dataset described in Korthauer and

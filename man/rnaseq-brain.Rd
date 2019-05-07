@@ -6,6 +6,10 @@
 \alias{brain-benchmark}
 \alias{brain-uninf-benchmark}
 \title{RNA-seq, brain dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on differential gene expression analysis between
 two brain regions (nucleus accumbens and putamen) using data from

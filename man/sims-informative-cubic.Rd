@@ -8,6 +8,10 @@
 \alias{informative-cubic-benchmark-t11}
 \alias{informative-cubic-benchmark-t5}
 \title{Simulation study results (cubic covariate)}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for simulations used in Korthauer and Kimes et al. (2019) with `cubic'
 informative and paired uninformative covariates stored

@@ -7,6 +7,10 @@
 \alias{schubert-otus-abun-benchmark}
 \alias{schubert-otus-uninf-benchmark}
 \title{Microbiome, Schubert dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on 16S microbiome differential testing of
 Schubert et al. (2014) dataset described in Korthauer and

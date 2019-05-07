@@ -12,6 +12,10 @@
 \alias{polyesterW-results-de5}
 \alias{polyesterW-results-de10}
 \title{Polyester simulated dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for differential gene expression analysis using 
 RNA-seq data simulated with the \pkg{Polyester} package

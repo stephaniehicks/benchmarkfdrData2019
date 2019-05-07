@@ -6,6 +6,10 @@
 \alias{mouse-benchmark}
 \alias{mouse-uninf-benchmark}
 \title{Gene Set Analysis, mouse dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on gene set analysis using mouse dataset described in
 Korthauer and Kimes et al. (2019). Analyses were performed using GSEA.

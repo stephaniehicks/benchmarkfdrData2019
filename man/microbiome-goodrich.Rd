@@ -8,6 +8,10 @@
 \alias{goodrich-genus-uninf-benchmark}
 \alias{goodrich-otus-benchmark}
 \title{Microbiome, Goodrich dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on 16S microbiome differential testing of
 Goodrich et al. (2014) dataset described in Korthauer and

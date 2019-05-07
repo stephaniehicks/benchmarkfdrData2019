@@ -6,6 +6,10 @@
 \alias{human-benchmark}
 \alias{human-uninf-benchmark}
 \title{Gene Set Analysis, human dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on gene set analysis using human dataset described in
 Korthauer and Kimes et al. (2019). Analyses were performed using GSEA.

@@ -10,6 +10,10 @@
 \alias{varyingntests-benchmark-n10000}
 \alias{varyingntests-benchmark-n50000}
 \title{Simulation study results (varying number of tests)}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for simulations used in Korthauer and Kimes et al. (2019) across varying
 number of hypotheses tested, using standard Gaussian distributed test statistics,

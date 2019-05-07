@@ -8,6 +8,10 @@
 \alias{uasettings-benchmark-skew}
 \alias{uasettings-benchmark-spiky}
 \title{Simulation study results (unimodal, Gaussian-distributed)}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for simulations used in Korthauer and Kimes et al. (2019)
 with 'unimodal' series of effect size distributions (Stephens, 2017)

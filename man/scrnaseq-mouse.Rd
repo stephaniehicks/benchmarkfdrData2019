@@ -13,6 +13,10 @@
 \alias{mouse-benchmark-wilcox-mean}
 \alias{mouse-benchmark-wilcox-uninf}
 \title{scRNA-seq, mouse dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on single-cell RNA-seq differential expression analysis
 using data from mouse cells at NF-kappa-beta activation as described in

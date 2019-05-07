@@ -16,6 +16,10 @@
 \alias{varyingpi0-t-benchmark-nullprop95}
 \alias{varyingpi0-t-benchmark-nullprop99}
 \title{Simulation study results (varying null proportion, t-distributed)}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for simulations used in Korthauer and Kimes et al. (2019) across varying
 null proportion of hypotheses with 20000 tests, \eqn{t_{11}} distributed

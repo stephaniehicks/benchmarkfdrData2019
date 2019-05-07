@@ -10,6 +10,10 @@
 \alias{varyinginfo-discrete-benchmark-level80}
 \alias{varyinginfo-discrete-benchmark-level100}
 \title{Simulation study results (varying information, discrete)}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for simulations used in Korthauer and Kimes et al. (2019) across varying
 covariate informativeness, using standard Gaussian distributed test statistics,

@@ -9,6 +9,10 @@
 \alias{papa-genus-uninf-benchmark}
 \alias{papa-otus-benchmark}
 \title{Microbiome, Papa dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on 16S microbiome differential testing of
 Papa et al. (2012) dataset described in Korthauer and

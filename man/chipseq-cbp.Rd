@@ -7,6 +7,10 @@
 \alias{cbp-csaw-uninf-benchmark}
 \alias{cbp-csaw-cov-benchmark}
 \title{ChIP-seq, CBP dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on differential peak calling in CREB-binding protein (CBP)
 knockout and wild-type mice described in Korthauer and Kimes et al. (2019).

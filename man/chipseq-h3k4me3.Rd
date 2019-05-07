@@ -8,6 +8,10 @@
 \alias{h3k4me3-csaw-uninf-benchmark}
 \alias{h3k4me3-csaw-cov-benchmark}
 \title{ChIP-seq, H3K4me3 dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on differential peak calling in human H3K4me3
 ChIP-seq data from ENCODE described in Korthauer and Kimes et al. (2019).

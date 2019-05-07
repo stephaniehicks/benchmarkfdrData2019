@@ -44,7 +44,8 @@ NULL
 #' Simulations were performed with standard Gaussian, \eqn{t_5}, \eqn{t_{11}},
 #' and \eqn{\chi_4} distributed test statistics.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -81,7 +82,8 @@ NULL
 #' Simulations were performed with standard Gaussian, \eqn{t_5}, \eqn{t_{11}},
 #' and \eqn{\chi_4} distributed test statistics.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -118,7 +120,8 @@ NULL
 #' Simulations were performed with standard Gaussian, \eqn{t_5}, \eqn{t_{11}},
 #' and \eqn{\chi_4} distributed test statistics.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -155,7 +158,8 @@ NULL
 #' Simulations were performed with standard Gaussian, \eqn{t_5}, \eqn{t_{11}},
 #' and \eqn{\chi_4} distributed test statistics.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -199,7 +203,8 @@ NULL
 #' similar settings were considered, but with \eqn{t_{11}} distributed test statistics
 #' and 25\% of tests being non-null, respectively.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -249,7 +254,8 @@ NULL
 #' similar settings were considered, but with standard Gaussian distributed test statistics
 #' and 25\% of tests being non-null, respectively.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -298,7 +304,8 @@ NULL
 #' In \code{\link{sims-uasettings}},
 #' similar settings were considered, but with 10\% of tests being non-null.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -349,7 +356,8 @@ NULL
 #' similar settings were considered, but using a smooth relationship between the
 #' condition probability of a test being null and the informative covariate.
 #'  
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -397,7 +405,8 @@ NULL
 #' similar settings were considered, but using a discrete, non-smooth, relationship
 #' between the condition probability of a test being null and the informative covariate.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -437,7 +446,8 @@ NULL
 #' as a list of SummarizedBenchmark objects from 100 replications. 
 #' Simulations were performed with 100, 500, 1000, 5000, 10000, and 50000 tests.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -480,7 +490,8 @@ NULL
 #' In \code{\link{sims-varyingpi0}},
 #' similar settings were considered, but standard Gaussian distributed test statistics.
 #'
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each
@@ -530,7 +541,8 @@ NULL
 #' In \code{\link{sims-varyingpi0-t}},
 #' similar settings were considered, but \eqn{t_{11}} distributed test statistics.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' The object is a list of length 100 corresponding to the 100 replications. Each

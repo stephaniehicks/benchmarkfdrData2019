@@ -39,3 +39,7 @@ Changes in version 0.99.10 (2019-05-06)
 
 Changes in version 0.99.11 (2019-05-06)
 + Fixed typo in one doc reference again
+
+Changes in version 0.99.12 (2019-05-07)
++ Explicitly add metadata param documentation to each Rd
++ Update description in DESCRIPTION file

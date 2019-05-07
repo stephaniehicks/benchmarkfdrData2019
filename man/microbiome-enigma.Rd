@@ -13,6 +13,10 @@
 \alias{enigma-so4-otus-abun-benchmark}
 \alias{enigma-so4-otus-uninf-benchmark}
 \title{Microbiome, ENIGMA dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on 16S microbiome Spearman correlation testing of
 ENIGMA dataset described in Korthauer and

@@ -13,6 +13,10 @@
 \alias{human-benchmark-wilcox-mean}
 \alias{human-benchmark-wilcox-uninf}
 \title{scRNA-seq, human dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on single-cell RNA-seq differential expression analysis
 using data from diffuse neoplastic infiltrating cells at the migrating front

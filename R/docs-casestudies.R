@@ -6,7 +6,8 @@
 #' Analyses were performed using either \code{DESeq2}
 #' applied to predefined regions or with the \code{csaw} package.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -41,7 +42,8 @@ NULL
 #' knockout and wild-type mice described in Korthauer and Kimes et al. (2019).
 #' Analyses were performed using the \code{csaw} package. 
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -73,7 +75,8 @@ NULL
 #' Results for case study on gene set analysis using mouse dataset described in
 #' Korthauer and Kimes et al. (2019). Analyses were performed using GSEA.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -103,7 +106,8 @@ NULL
 #' Results for case study on gene set analysis using human dataset described in
 #' Korthauer and Kimes et al. (2019). Analyses were performed using GSEA.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -134,7 +138,8 @@ NULL
 #' from the GIANT Consortium 
 #' described in Korthauer and Kimes et al. (2019).
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -168,7 +173,8 @@ NULL
 #' for differential abundance between samples from patients
 #' with colorectal cancer and patients with no colonic lesions.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -214,7 +220,8 @@ NULL
 #' for correlation between OTU-level microbial abundances and various geochemical
 #' and physical measurements.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -261,7 +268,8 @@ NULL
 #' for differential abundance between samples from lean (body mass index, BMI < 25)
 #' and obsese (BMI > 30) individuals.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -303,7 +311,8 @@ NULL
 #' for differential abundance between samples from patients
 #' with GI symptoms but not IBD, and IBD patients.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -348,7 +357,8 @@ NULL
 #' and patients with diarrheal stool samples (including both C. difficile infection,
 #' CDI, and non-CDI samples).
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -387,7 +397,8 @@ NULL
 #' the GTEx project described in Korthauer and Kimes et al. (2019).
 #' Differential expression was tested using \pkg{DESeq2}.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -419,7 +430,8 @@ NULL
 #' Korthauer and Kimes et al. (2019).
 #' Differential expression was tested using \pkg{DESeq2}.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -452,7 +464,8 @@ NULL
 #' described in Korthauer and Kimes et al. (2019).
 #' Differential expression was tested using \pkg{DESeq2}.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -502,7 +515,8 @@ NULL
 #' described in Korthauer and Kimes et al. (2019).
 #' Differential expression was tested using \pkg{DESeq2}.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -588,7 +602,8 @@ NULL
 #' Differential expression was testing using either the \pkg{MAST} package,
 #' \pkg{scDD} package, or Wilcoxon rank-sum test.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:
@@ -635,7 +650,8 @@ NULL
 #' Differential expression was testing using either the \pkg{MAST} package,
 #' \pkg{scDD} package, or Wilcoxon rank-sum test.
 #' 
-#' @inheritParams sims-null
+#' @param metadata logical whether to load metadata (TRUE) or full resource (FALSE).
+#'        (default = FALSE)
 #' 
 #' @details
 #' Results for this case study include:

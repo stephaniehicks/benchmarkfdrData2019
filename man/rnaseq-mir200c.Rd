@@ -6,6 +6,10 @@
 \alias{mir200c-benchmark}
 \alias{mir200c-uninf-benchmark}
 \title{RNA-seq, mir200c dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for case study on differential gene expression analysis between
 mir200c knockdown cells and untreated cells described in

@@ -30,6 +30,10 @@
 \alias{yeastW-results-de5}
 \alias{yeastW-results-de10}
 \title{Yeast in silico dataset results}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for differential gene expression analysis using 
 in silico (computationally) spiked-in data generated from   

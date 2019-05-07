@@ -10,6 +10,10 @@
 \alias{varyinginfo-smooth-benchmark-level80}
 \alias{varyinginfo-smooth-benchmark-level100}
 \title{Simulation study results (varying information, smooth)}
+\arguments{
+\item{metadata}{logical whether to load metadata (TRUE) or full resource (FALSE).
+(default = FALSE)}
+}
 \description{
 Results for simulations used in Korthauer and Kimes et al. (2019) across varying
 covariate informativeness, using standard Gaussian distributed test statistics,
