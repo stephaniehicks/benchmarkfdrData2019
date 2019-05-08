@@ -49,3 +49,6 @@ Changes in version 0.99.13 (2019-05-08)
 + bioc1: Added 'BugReports:' field to DESCRIPTION file
 + bioc2: Removed reference to 'remotes' pkg from vignette
 + bioc3: Added details to vignette for alt approach to load resource from ExperimentHub
+
+Changes in version 0.99.14 (2019-05-08)
++ bioc4: Added non-eval code chuck to vignette for installing package

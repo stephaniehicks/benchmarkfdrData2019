@@ -38,6 +38,16 @@ benchmarking summaries provided with this package. Here, we give an example of
 how to load summary objects, plot results, and apply a new method to the
 dataset.
 
+The package can be installed from R (version >= 3.6) using the
+[`BiocManager`](https://cran.r-project.org/package=BiocManager) package,
+available on CRAN.
+
+```{r install-bioc, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("benchmarkfdrData2019")
+```
+
 # Load Packages
 
 ```{r load-pkgs}
@@ -64,8 +74,7 @@ all of the features described in newer versions of the package (e.g. available o
 In this vignette, we use the release version of the `SummarizedBenchmark` package
 [available on Bioconductor](http://bioconductor.org/packages/SummarizedBenchmark/).
 However, the `fdrbenchmark` version of the `SummarizedBenchmark` package can be
-installed from GitHub using the 
-[`BiocManager`](https://cran.r-project.org/package=BiocManager) package.
+installed from GitHub, again, using the `BiocManager` package.
 
 ```{r, eval = FALSE}
 BiocManager::install("areyesq89/SummarizedBenchmark", ref = "fdrbenchmark")
