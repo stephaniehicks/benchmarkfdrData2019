@@ -63,43 +63,56 @@ all of the features described in newer versions of the package (e.g. available o
 
 In this vignette, we use the release version of the `SummarizedBenchmark` package
 [available on Bioconductor](http://bioconductor.org/packages/SummarizedBenchmark/).
-However, the [`remotes`](https://cran.r-project.org/package=remotes) package or
-[`BiocManager`](https://cran.r-project.org/package=BiocManager) package can also be 
-used to install the `fdrbenchmark` version of the `SummarizedBenchmark` package from
-GitHub.
+However, the `fdrbenchmark` version of the `SummarizedBenchmark` package can be
+installed from GitHub using the 
+[`BiocManager`](https://cran.r-project.org/package=BiocManager) package.
 
 ```{r, eval = FALSE}
-## using the 'remotes' package
-remotes::install_github("areyesq89/SummarizedBenchmark", ref = "fdrbenchmark")
-
-## using the 'BiocManager' package
 BiocManager::install("areyesq89/SummarizedBenchmark", ref = "fdrbenchmark")
 ```
 
 # Load Data 
 
-The data are downloaded from _Bioconductor_'s 
+The data are available for downloaded from the _Bioconductor_ 
 [ExperimentHub](http://bioconductor.org/packages/ExperimentHub) 
-web resource. 
+web resource. The complete list of resources availble with the
+`benchmarkfdrData2019` package can be queried using the following
+command.
 
 ```{r}
-hub = ExperimentHub()
-query(hub, "benchmarkfdrData2019")
+hub <- ExperimentHub()
+bfdrData <- query(hub, "benchmarkfdrData2019")
+bfdrData
 ```
-Alternatively, datasets can be loaded individually. Here, we 
-load two _SummarizedBenchmark_ objects to illustrate the analyses that
-can be performed using the data objects available with this package.
+
+The above command only returns the metadata associated with each
+data object available on ExperimentHub. Individual resources must
+be retrieved from ExperimentHub before they can be loaded in R.
+Here, we retrieve and load two resource objects to illustrate the
+analyses that can be performed using the data available with this package.
 
 First, we load the benchmark results for a ChIP-seq case study where differential
 binding was tested using the `r Biocpkg("csaw")` package with region width used
-as the independent covariate.
+as the independent covariate. The resource is stored with the title `"cbp-csaw-benchmark"`.
+First, we determine the corresponding ExperimentHub ID for the resource.
+
+```{r getid-chipres}
+cbp_id <- bfdrData$ah_id[bfdrData$title == "cbp-csaw-benchmark"]
+cbp_id
+```
+
+Using the ID, we can now access the metadata associated with the resource by
+subsetting  `bfdrData` using single brackets (`[`). Using double brackets (`[[`)
+will retrieve the resource from the ExperimentHub server.
 
 ```{r load-chipres}
-chipres <- `cbp-csaw-benchmark`()
+bfdrData[cbp_id]
+
+chipres <- bfdrData[[cbp_id]]
 chipres
 ```
 
-Second, we load the benchmark results from a yeast in silico RNA-seq experiment
+Next, we load the benchmark results from a yeast in silico RNA-seq experiment
 where differential expression was tested using DESeq2 with a strong (simulated)
 independent and informative covariate. Unlike the ChIP-seq analysis above, with
 the in silico experiment, we know ground truth, and therefore can evaluate FDR
@@ -107,9 +120,18 @@ control as well as the true positive rate (TPR) at nominal FDR significance
 thresholds.
 
 Since the in silico experiments were repeated 100 times, the data object is
-a list of 100 _SummarizedBenchmark_ objects for each replication.
+a list of 100 _SummarizedBenchmark_ objects for each replication. The resource
+is stored with the title `"yeast-results-de5"`. Here, we demonstrate an alternative approach
+to retrieving the resource from the ExperimentHub server. Rather than subset `bfdrData`
+using double brackets (`[[`), we retrieve the resource by calling the
+resource name as a function (`yeast-results-de5()`). This functionality is available
+for all resources available with this package (including the ChIP-seq resource
+loaded above).
 
 ```{r load-yeastres}
+yeast_id <- bfdrData$ah_id[bfdrData$title == "yeast-results-de5"]
+bfdrData[yeast_id]
+
 yeastres <- `yeast-results-de5`()
 length(yeastres)
 yeastres[[1]]

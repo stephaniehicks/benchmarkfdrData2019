@@ -43,3 +43,9 @@ Changes in version 0.99.11 (2019-05-06)
 Changes in version 0.99.12 (2019-05-07)
 + Explicitly add metadata param documentation to each Rd
 + Update description in DESCRIPTION file
+
+Changes in version 0.99.13 (2019-05-08)
++ Changes based on feedback from Bioconductor review
++ bioc1: Added 'BugReports:' field to DESCRIPTION file
++ bioc2: Removed reference to 'remotes' pkg from vignette
++ bioc3: Added details to vignette for alt approach to load resource from ExperimentHub

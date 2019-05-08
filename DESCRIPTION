@@ -1,6 +1,6 @@
 Package: benchmarkfdrData2019
 Title: Data and Benchmarking Results from Korthauer and Kimes et al. (2019)
-Version: 0.99.12
+Version: 0.99.13
 Authors@R: c(
     person("Stephanie", "Hicks", role = c("aut", "cre"), 
             email = "shicks19@jhu.edu", 
@@ -9,6 +9,7 @@ Authors@R: c(
             comment = c(ORCID = "0000-0002-4565-1654")),
     person("Patrick", "Kimes", role = "aut", 
             comment = c(ORCID = "0000-0001-6819-9077")))
+BugReports: https://github.com/stephaniehicks/benchmarkfdrData2019/issues
 Description: Benchmarking results for experimental and simulated data sets used 
     in Korthauer and Kimes et al. (2019) to compare methods for controlling
     the false discovery rate. 
