@@ -52,3 +52,6 @@ Changes in version 0.99.13 (2019-05-08)
 
 Changes in version 0.99.14 (2019-05-08)
 + bioc4: Added non-eval code chuck to vignette for installing package
+
+Changes in version 0.99.15 (2019-06-06)
++ Updated vignette to remove excessive printing of data objects

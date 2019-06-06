@@ -180,7 +180,8 @@ The corrected significance returned by each method is included in the single ass
 (corresponding to the benchmarked results). 
 
 ```{r show-assay}
-assay(chipres, "bench")
+dim(assay(chipres, "bench"))
+head(assay(chipres, "bench"))
 ```
 
 The ASH (`ashq`) results are `NA` as the method was not applied to the data.
@@ -210,14 +211,20 @@ We will add the `"rejections"` metric to the `"bench"` assay and compute the num
 of rejections for each method at cutoffs between 0.01 and 0.10.
 
 ```{r chip-add-metrics}
-chipres <- addPerformanceMetric(chipres, evalMetric = "rejections", assay = "bench")
+chipres <- addPerformanceMetric(chipres,
+                                evalMetric = "rejections",
+                                assay = "bench")
 ```
 
 Next, we compute the number of rejections and organize this as a tidy data.frame.
 
 ```{r chip-est-metrics}
-chipdf <- estimatePerformanceMetrics(chipres, alpha = seq(0.01, 0.10, by = .01), tidy = TRUE)
-chipdf
+chipdf <- estimatePerformanceMetrics(chipres,
+                                     alpha = seq(0.01, 0.10, by = .01),
+                                     tidy = TRUE)
+
+dim(chipdf)
+head(chipdf)
 ```
 
 Each row in the data.frame corresponds to a `method + metric + cutoff` combination
@@ -299,7 +306,8 @@ a subset of useful columns.
 
 ```{r yeast-clean-cols}
 ## subset IHW
-yeastdf <- dplyr:::filter(yeastdf, !(grepl("ihw", label) & param.alpha != alpha))
+yeastdf <- dplyr:::filter(yeastdf,
+                          !(grepl("ihw", label) & param.alpha != alpha))
 yeastdf <- dplyr:::mutate(yeastdf, label = gsub("(ihw)-a\\d+", "\\1", label))
 
 ## subset BL
@@ -399,8 +407,11 @@ Now that we have a _SummarizedBenchmark_ object, we can evaluate performance
 metrics as before.
 
 ```{r chip-new-metrics}
-new_res <- addPerformanceMetric(new_res, evalMetric = "rejections", assay = "default") 
-new_df <- estimatePerformanceMetrics(new_res, alpha = seq(0.01, 0.10, by = 0.01),
+new_res <- addPerformanceMetric(new_res,
+                                evalMetric = "rejections",
+                                assay = "default")
+new_df <- estimatePerformanceMetrics(new_res,
+                                     alpha = seq(0.01, 0.10, by = 0.01),
                                      tidy = TRUE)
 ```
 
