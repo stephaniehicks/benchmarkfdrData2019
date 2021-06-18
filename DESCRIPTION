@@ -1,6 +1,6 @@
 Package: benchmarkfdrData2019
 Title: Data and Benchmarking Results from Korthauer and Kimes et al. (2019)
-Version: 1.7.0
+Version: 1.7.1
 Authors@R: c(
     person("Stephanie", "Hicks", role = c("aut", "cre"), 
             email = "shicks19@jhu.edu", 
@@ -15,7 +15,7 @@ Description: Benchmarking results for experimental and simulated data sets used
     the false discovery rate. 
 Depends: R (>= 3.6.0), SummarizedExperiment, ExperimentHub
 Imports: utils
-Suggests: knitr, BiocStyle, testthat, SummarizedBenchmark, dplyr, ggplot2, rlang
+Suggests: rmarkdown, knitr, BiocStyle, testthat, SummarizedBenchmark, dplyr, ggplot2, rlang
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

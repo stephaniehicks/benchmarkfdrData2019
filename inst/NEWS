@@ -55,3 +55,6 @@ Changes in version 0.99.14 (2019-05-08)
 
 Changes in version 0.99.15 (2019-06-06)
 + Updated vignette to remove excessive printing of data objects
+
+Changes in version 1.7.1 (2021-06-18)
++ Added `rmarkdown` to Suggests in DESCRIPTION to resolve changes in `knitr`
