@@ -1,6 +1,6 @@
 Package: benchmarkfdrData2019
 Title: Data and Benchmarking Results from Korthauer and Kimes et al. (2019)
-Version: 1.15.0
+Version: 1.16.0
 Authors@R: c(
     person("Stephanie", "Hicks", role = c("aut", "cre"), 
             email = "shicks19@jhu.edu", 
