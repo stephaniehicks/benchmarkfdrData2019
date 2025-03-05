@@ -1,6 +1,6 @@
 Package: benchmarkfdrData2019
 Title: Data and Benchmarking Results from Korthauer and Kimes et al. (2019)
-Version: 1.21.0
+Version: 1.21.1
 Authors@R: c(
     person("Stephanie", "Hicks", role = c("aut", "cre"), 
             email = "shicks19@jhu.edu", 
@@ -23,3 +23,4 @@ biocViews: SingleCellData, ExperimentData, RNASeqData, ExpressionData,
     ExperimentData, ExperimentHub
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
+PackageStatus: Deprecated
